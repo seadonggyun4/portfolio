@@ -1,4 +1,5 @@
 .skill{
+  
   .skill-title{
     padding-left: 10px;
     font-size: 26px;
@@ -6,158 +7,220 @@
   }
 
   .skill-list{
+    @include flexbox-column(center,center);
+    // @include flexbox(center,center);
     position: relative;
-    @include flexbox(start,center);
-    flex-wrap: wrap;
-    width: 100%;
-  
-  
-  
-    /* ==================== [card box design]  ==================== */
-    .box{
-      position: relative;
-      margin: 10px;
-      width: 150px;
-      height: 250px;
-      background: #232323;
-      border-radius: 20px;
-      overflow: hidden;
-      transform: rotateY(180deg) ; 
-      transform-style: preserve-3d;
-      transition: all 0.5s ease-in-out;
-      transition-delay: calc(var(--i) * 0.1s) ;
-      cursor: pointer;
-  
-      &::before{
-        content: "";
-        position: absolute;
-        top: -30px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #9bdc28;
-        clip-path: circle(60px at 80% 20%);
-        transition: 0.5s ease-in-out;
-        // opacity: 0;
-      }
-     
-  
-      /* ===== skill text content ===== */
-      &::after{
-        content: "skill";
-        position: absolute;
-        bottom: 10px;
-        right: 5px;
-        color: #fff;
-        font-size: 5em;
-        font-weight: 900;
-        font-style: italic;
-        transform: rotate(331deg);
-        transition: 0.5s;
-        opacity: 0.04;
-  
-      }
-  
-  
-      /* ===== icon name ===== */
-      .name{
-        z-index: 10;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        color: #fff;
-        font-size: 17px;
-        text-align: center;
-        transform-style: preserve-3d;
-        transform: translate3d(0, 0, 20px);
-        transition: 0.5s;
-        // opacity: 0;
-      }
-     
-  
+    width: 850px;
+    transition: all 1s ease-in-out;
+    // flex-wrap: wrap;
+
+    .skill-wrap{
+      @include flexbox(center,center);
+      // width: 100%;
+
       
-      /* ===== icon ===== */
-      .icon{
-        z-index: 11;
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        max-width: 100px;
+      /* ==================== [card box design]  ==================== */
+      .box{
+        position: relative;
+        margin: 10px;
+        width: 20%;
+        max-width: 150px;
+        min-width: 100px;
+        height: 180px;
+        background: #232323;
+        border-radius: 20px;
+        overflow: hidden;
+        transform: rotateY(180deg) ; 
         transform-style: preserve-3d;
-        transform: translate3d(-50%, -50%, 0px) rotate(-15deg);
-        transition: 0.5s;
-        // opacity: 0;
-      }
-
-  
-  
-  
-  
-      /* ===== box:hover ===== */
-      &:hover{
-  
+        transition: all 0.3s ease-in-out;
+        transition-delay: calc(var(--i) * 0.1s) ;
+        cursor: pointer;
+    
+        /* ===== circle content ===== */
         &::before{
-          clip-path: circle(150px at 80% -20%);
+          content: "";
+          position: absolute;
+          top: -30px;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #9bdc28;
+          clip-path: circle(40px at 80% 20%);
+          transition: 0.5s ease-in-out;
+          // opacity: 0;
         }
-  
+       
+    
+        /* ===== skill text content ===== */
+        &::after{
+          content: "skill";
+          position: absolute;
+          bottom: 10px;
+          right: 5px;
+          color: #fff;
+          font-size: 5em;
+          font-weight: 900;
+          font-style: italic;
+          transform: rotate(331deg);
+          transition: 0.5s;
+          opacity: 0.04;
+    
+        }
+    
+    
+        /* ===== icon name ===== */
         .name{
-          bottom: 40px;
-          opacity: 1;
+          z-index: 10;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          color: #fff;
+          font-size: 13px;
+          text-align: center;
+          transform-style: preserve-3d;
+          transform: translate3d(0, 0, 20px);
+          transition: 0.5s;
+          // opacity: 0;
+        }
+       
+    
+        
+        /* ===== icon ===== */
+        .icon{
+          z-index: 11;
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          max-width: 70px;
+          transform-style: preserve-3d;
+          transform: translate3d(-50%, -50%, 0px) rotate(-15deg);
+          transition: 0.5s;
+          // opacity: 0;
         }
   
-        .icon{
-          top: 50%;
-          transform: translate3d(-50%, -50%, 50px) rotate(-15deg);
+    
+    
+    
+    
+        /* ===== box:hover ===== */
+        &:hover{
+    
+          &::before{
+            clip-path: circle(150px at 80% -20%);
+          }
+    
+          .name{
+            bottom: 40px;
+            opacity: 1;
+          }
+    
+          .icon{
+            top: 50%;
+            transform: translate3d(-50%, -50%, 50px) rotate(-15deg);
+          }
         }
+    
+    
       }
   
-  
-    }
+      //flip 애니메이션 을 위한 클래스
+      .box.flip{
+        transform: rotateY(0);
+      }
 
-    .box.flip{
-      transform: rotateY(0);
+      /* ==================== [card Icon design]  ==================== */
+      .box.html::before{
+        background-color: #ff5722;
+      }
+    
+      .box.css::before{
+        background-color: #0277bd;
+      }
+    
+      .box.js::before{
+        background-color: #FFCA28;
+      }
+    
+      .box.ts::before{
+        background-color: #317AC7;
+      }
+    
+      .box.sass::before{
+        background-color: #D56EA3;
+      }
+    
+      .box.bootstrap::before{
+        background-color: #840AFA;
+      }
+    
+      .box.jquery::before{
+        background-color: #0268AE;
+      }
+    
+      .box.figma::before{
+        background-color: #FF7262;
+      }
+    
+      .box.vscode::before{
+        background-color: #33A8F2;
+      }
+    
+      .box.git::before{
+        background-color: #111;
+      }
     }
   
-    /* ==================== [card Icon design]  ==================== */
-    .box.html::before{
-      background-color: #ff5722;
+  }
+
+  @include responsive(T){
+    .skill-list{
+      flex-direction: row;   
+
+
+      .skill-wrap{
+        // width: 50%;
+        .box{
+          width: 115px;
+          height: 220px;
+
+          &::before{
+            clip-path: circle(50px at 80% 20%);
+          }
+
+          .name{
+            font-size: 15px;
+          }
+
+          .icon{
+            max-width: 85px;
+          }
+        }
+      }
     }
-  
-    .box.css::before{
-      background-color: #0277bd;
-    }
-  
-    .box.js::before{
-      background-color: #FFCA28;
-    }
-  
-    .box.ts::before{
-      background-color: #317AC7;
-    }
-  
-    .box.sass::before{
-      background-color: #D56EA3;
-    }
-  
-    .box.bootstrap::before{
-      background-color: #840AFA;
-    }
-  
-    .box.jquery::before{
-      background-color: #0268AE;
-    }
-  
-    .box.figma::before{
-      background-color: #FF7262;
-    }
-  
-    .box.vscode::before{
-      background-color: #33A8F2;
-    }
-  
-    .box.git::before{
-      background-color: #111;
+  }
+
+
+  @include responsive(D){
+    .skill-list{
+      .skill-wrap{
+        .box{
+          width: 150px;
+          height: 250px;
+
+          &::before{
+            clip-path: circle(60px at 80% 20%);
+          }
+
+          .name{
+            font-size: 17px;
+          }
+
+          .icon{
+            max-width: 100px;
+          }
+        }
+      }
     }
   }
 }

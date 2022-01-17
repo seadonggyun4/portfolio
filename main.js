@@ -1,4 +1,4 @@
-// wave animation ============================================================================================
+// [wave animation] ============================================================================================
 
 let wave1 = document.getElementById('wave1');
 let wave2 = document.getElementById('wave2');
@@ -15,7 +15,7 @@ window.addEventListener('scroll',function(){
   wave4.style.backgroundPositionX = 100 + value + -2 + 'px'
 })
 
-// flip animation ============================================================================================
+// [flip animation] ============================================================================================
 var controller = new ScrollMagic.Controller();
 
 const boxEls = document.querySelectorAll('.box');
@@ -32,11 +32,11 @@ boxEls.forEach(function(boxEl){
 });
 
 
-// flip animation ============================================================================================
+// [flip animation] ============================================================================================
 boxEls.forEach(function(boxEl){
   boxEl.addEventListener("mouseover", function(){
     VanillaTilt.init(document.querySelectorAll(".box"), {
-      max: 35, //최대 휘어짐
+      max: 45, //최대 휘어짐
       speed: 400, // 값이 낮을수록 더 빠르게 변한다.
     });
     

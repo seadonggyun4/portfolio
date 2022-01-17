@@ -1,0 +1,86 @@
+/*
+재사용성 & 유지보수 높은 그리드 시스템 설계
+
+* MOBILE (<768px) -------------------------------------------
+* fixture : sm
+* columns : 4
+* units : 25% - 22.5px  => (100% - (5px * 2))/4 - 20px
+* gutter : 20px
+* margin : 5px
+* container-size : 100% - (5px * 2)
+
+* TABLET (>= 768px) -------------------------------------------
+* fixture : md
+* columns : 12
+* units : 8.333333333333333% - 25px =>  (100% - (30px * 2))/12 - 20px 
+* gutter : 20px
+* margin : 30px
+* container-size : 100% - (30px * 2) 
+* max-container-size : 960px
+
+* DESKTOP (>= 1200px) -------------------------------------------
+* fixture : lg
+* columns : 12
+* units : 75px => 1140px/12 - 20px
+* gutter : 20px
+* margin : auto
+* container-size : 1140px
+* max-container-size : 1140px
+
+container-size는 그리드시스템이 적용되는 범위
+*/
+
+@use 'sass:math';
+
+.container {
+  /*[ =========== MOBILE ========== ]*/
+  width: 100%;
+  padding: 0 $sm-margin;
+  margin: 0 auto;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  // css 다중 선택자
+  // class 중 col- 로 시작하는 모든 개체에 적용
+  // .col-sm-1  .col-md-2  .col-lg-3
+  // 모바일에서 각 columns의 gutter를 적용시키기 위함
+  [class^='col-'] {
+    padding: 0 $gutter * 0.5;
+  }
+
+  // sass for 반복문
+  // sm-columns 1~4 까지 선택
+  @for $i from 1 through $sm-columns {
+    // columns 의 갯수에 따른 넓이 조정
+    .col-sm-#{$i} {
+      //percemtage는 값을 %로 바꾼다.
+      width: percentage(math.div($i, $sm-columns));
+    }
+  }
+  /*[ =========== TABLET ========== ]*/
+  @include responsive(T) {
+    max-width: $md-max-container;
+    padding: 0 $md-margin;
+
+    @for $i from 1 through $md-columns {
+      .col-md-#{$i} {
+        width: percentage(math.div($i, $md-columns));
+      }
+    }
+  }
+
+  /*[ =========== DESKTOP ========== ]*/
+  @include responsive(D) {
+    max-width: $lg-max-container;
+    padding: 0;
+
+    @for $i from 1 through $lg-columns {
+      .col-lg-#{$i} {
+        width: ($lg-unit + $gutter) * $i;
+      }
+    }
+  }
+}

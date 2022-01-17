@@ -1,0 +1,55 @@
+.wave-box{
+  .wave{
+    position: absolute;
+    bottom: 30%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(/asset/img/wave.png);
+    background-size: 1000px 100px;
+    animation: animate 4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.25s) ;
+
+    @keyframes animate {
+      0%,100%{
+        transform: translateY(0px);
+      }
+      50%{
+        transform: translateY(20px);
+      }
+    }
+    
+
+    &#wave1{
+      z-index: $wave1-index;
+      opacity: 1;
+      background-position-x: 400px;
+    }
+
+    &#wave2{
+      z-index: $wave2-index;
+      opacity: 0.5;
+      background-position-x: 300px;
+    }
+
+    &#wave3{
+      z-index: $wave3-index;
+      opacity: 0.2;
+      background-position-x: 200px;
+    }
+    &#wave4{
+      z-index: $wave4-index;
+      opacity: 0.7;
+      background-position-x: 700px;
+    }
+  }
+
+
+  @include responsive(D){
+    .wave{
+      bottom: 0;
+    }
+  }
+}
+
+

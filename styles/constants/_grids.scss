@@ -1,0 +1,18 @@
+$gutter: 20px;
+
+$sm-columns: 4;
+$sm-margin: 5px;
+
+// $md-breakpoint: 768px;
+$md-columns: 12;
+$md-margin: 30px;
+// container의 width가 margin을 포함한 width로 계산된다. => 100%
+// 960px 으로 넓이를 지정하면 안의 진짜 컨텐츠는 최대 900px 까지밖에 안늘어 난다.
+$md-max-container: 960px + $md-margin * 2;
+
+// $lg-breakpoint: 1200px;
+$lg-columns: 12;
+$lg-unit: 75px;
+$lg-max-container: ($lg-unit + $gutter) * $lg-columns;
+
+$grid-margin: 15px;

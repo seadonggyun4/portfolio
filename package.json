@@ -1,0 +1,15 @@
+{
+  "name": "pp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "sass" : "sass -w styles/main.scss dist/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.48.0"
+  }
+}

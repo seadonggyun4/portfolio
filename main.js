@@ -42,5 +42,10 @@ boxEls.forEach(function(boxEl){
     
   })
 })
-
+// [project-slide: use swiper] ============================================================================================
+var swiper = new Swiper(".projects", {
+  effect: "cards",
+  grabCursor: true,
+  loop: true, // 반복재생 여부
+});
 

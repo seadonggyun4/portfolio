@@ -9,8 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- google Material icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <!-- style sheet -->
   <link rel="stylesheet" href="./dist/style.css">
+  <!-- swiper 라이브러리 -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </head>
 <body>
   <!-- ======================================== header ======================================== -->
@@ -63,8 +68,8 @@
     <!-- ========== tech section ========== -->
     <section class="tech-section" aria-label="사용할수 있는 기술들의 리스트">
       <div class="container">
-        <span class="divider">🛠 Tech Used</span>
         <div class="row">
+          <span class="divider">🛠 Tech Used</span>
           <div class="col-sm-4">
             <!-- tech-skill -->
             <div class="tech-skill">
@@ -151,14 +156,21 @@
     <!-- ========== toy project section ========== -->
     <section class="toy-project-section">
       <div class="container">
-        <span class="divider">🎨 My toy-project</span>
         <div class="row">
-          
-          <div class="col-sm-4 col-md-6">
-            <div class="project"></div>
-          </div>
-          <div class="col-sm-4 col-md-6">
-            <div class="project"></div>
+          <span class="divider">🎨 My toy-project</span>
+          <div class="col-sm-4">
+            <div class="swiper projects">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+              </div>
+              <!-- <div class="swiper-prev btn" aria-label="뒤로 버튼">
+                <span class="material-icons" aria-hidden="true">arrow_back</span>
+              </div>
+              <div class="swiper-next btn" aria-label="앞으로 버튼">
+                <span class="material-icons" aria-hidden="true">arrow_forward</span>
+              </div> -->
+            </div>
           </div>
         </div>
       </div>

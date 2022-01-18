@@ -41,6 +41,7 @@ container-size는 그리드시스템이 적용되는 범위
   .row {
     display: flex;
     flex-wrap: wrap;
+    transition: all 1s ease-in-out;
   }
 
   // css 다중 선택자

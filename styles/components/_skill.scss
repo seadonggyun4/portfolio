@@ -106,7 +106,7 @@
         transform: rotateY(0);
 
         &::before{
-          opacity: 1;
+          opacity: 0.8;
         }
 
         .icon{
@@ -170,7 +170,7 @@
       }
     
       .box.git::before{
-        background-color: #111;
+        background-color: #EBE6E1;
       }
     }
   
@@ -207,6 +207,13 @@
             }
           }
         }
+        .box.flip{
+          &:hover{
+            &::before{
+              clip-path: circle(175px at 80% -20%);
+            }
+          }
+        }
       }
     }
   }
@@ -235,6 +242,13 @@
           &:hover{
             .name{
               bottom: 40px;
+            }
+          }
+        }
+        .box.flip{
+          &:hover{
+            &::before{
+              clip-path: circle(200px at 80% -20%);
             }
           }
         }

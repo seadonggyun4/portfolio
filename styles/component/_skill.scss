@@ -3,7 +3,7 @@
   .skill-title{
     padding-left: 10px;
     font-size: 26px;
-    margin-bottom:10px
+    margin-bottom:35px
   }
 
   .skill-list{
@@ -47,7 +47,7 @@
           background-color: #9bdc28;
           clip-path: circle(40px at 80% 20%);
           transition: 0.5s ease-in-out;
-          // opacity: 0;
+          opacity: 0;
         }
        
     
@@ -81,7 +81,7 @@
           transform-style: preserve-3d;
           transform: translate3d(0, 0, 20px);
           transition: 0.5s;
-          // opacity: 0;
+          opacity: 0;
         }
        
     
@@ -96,22 +96,31 @@
           transform-style: preserve-3d;
           transform: translate3d(-50%, -50%, 0px) rotate(-15deg);
           transition: 0.5s;
-          // opacity: 0;
+          opacity: 0;
         }
+    
+      }
   
-    
-    
-    
-    
-        /* ===== box:hover ===== */
+      /* ==================== [card box flip animation]  ==================== */
+      .box.flip{
+        transform: rotateY(0);
+
+        &::before{
+          opacity: 1;
+        }
+
+        .icon{
+          opacity: 1;
+        }
+        /* ===== box,flip:hover ===== */
+
         &:hover{
-    
           &::before{
             clip-path: circle(150px at 80% -20%);
           }
     
           .name{
-            bottom: 40px;
+            bottom: 30px;
             opacity: 1;
           }
     
@@ -120,13 +129,7 @@
             transform: translate3d(-50%, -50%, 50px) rotate(-15deg);
           }
         }
-    
-    
-      }
-  
-      //flip 애니메이션 을 위한 클래스
-      .box.flip{
-        transform: rotateY(0);
+        
       }
 
       /* ==================== [card Icon design]  ==================== */
@@ -173,6 +176,7 @@
   
   }
 
+  /* ==================== [Tablet]  ==================== */
   @include responsive(T){
     .skill-list{
       flex-direction: row;   
@@ -195,12 +199,20 @@
           .icon{
             max-width: 85px;
           }
+
+          &:hover{
+
+            .name{
+              bottom: 35px;
+            }
+          }
         }
       }
     }
   }
 
 
+  /* ==================== [Desk top]  ==================== */
   @include responsive(D){
     .skill-list{
       .skill-wrap{
@@ -218,6 +230,12 @@
 
           .icon{
             max-width: 100px;
+          }
+
+          &:hover{
+            .name{
+              bottom: 40px;
+            }
           }
         }
       }

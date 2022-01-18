@@ -3,9 +3,9 @@
   @include pos-center-x;
   display: block;
   position: relative;
-  margin-top: 100px;
   padding: 5px;
-  width: 33.33333333333333%;
+  margin-bottom: 100px;
+  width: 33.33333333333333%; //=> 100/3
   height: 30px;
   white-space: nowrap;
   font-weight: 800;

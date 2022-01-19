@@ -1,9 +1,11 @@
 .skill{
   
   .skill-title{
-    padding-left: 10px;
-    font-size: 26px;
-    margin-bottom:35px
+    @include  text-style(30);
+    margin-bottom:25px;
+    font-weight: 500;
+    border-bottom: 3px solid #5e96ff;
+    
   }
 
   .skill-list{
@@ -70,13 +72,13 @@
     
         /* ===== icon name ===== */
         .name{
+          @include text-style(16);
           z-index: 10;
           position: absolute;
           bottom: 0;
           left: 0;
           width: 100%;
           color: #fff;
-          font-size: 13px;
           text-align: center;
           transform-style: preserve-3d;
           transform: translate3d(0, 0, 20px);
@@ -193,7 +195,7 @@
           }
 
           .name{
-            font-size: 15px;
+            @include text-style(24);
           }
 
           .icon{
@@ -232,7 +234,7 @@
           }
 
           .name{
-            font-size: 17px;
+            @include text-style(30);
           }
 
           .icon{

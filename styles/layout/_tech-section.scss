@@ -6,17 +6,33 @@
     margin-bottom: 100px;
     width: 100%;
     overflow: hidden;
-    
-    
-  
   
     .skill{
       @include flexbox-column(center, center);
-      margin-bottom: 50px;
+      margin-bottom: 100px;
       width: 100%;
   
       &:last-child{
         margin-bottom: 0;
+      }
+    }
+  }
+
+
+  @include responsive(T){
+    .tech-skill{
+
+      .skill{
+        margin-bottom: 130px;
+      }
+    }
+  }
+
+  @include responsive(D){
+    .tech-skill{
+
+      .skill{
+        margin-bottom: 150px;
       }
     }
   }

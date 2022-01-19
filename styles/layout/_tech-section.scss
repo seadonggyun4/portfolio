@@ -1,0 +1,24 @@
+.tech-section{
+  background: linear-gradient( to bottom, #fff, #f3f3f3 );
+
+  .tech-skill{
+    @include flexbox-column(center, center);
+    margin-bottom: 100px;
+    width: 100%;
+    overflow: hidden;
+    
+    
+  
+  
+    .skill{
+      @include flexbox-column(center, center);
+      margin-bottom: 50px;
+      width: 100%;
+  
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+

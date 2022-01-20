@@ -4,12 +4,15 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "sass" : "sass -w styles/main.scss dist/style.css"
+    "sass": "sass -w styles/main.scss dist/style.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.48.0"
+  },
+  "dependencies": {
+    "three": "^0.136.0"
   }
 }

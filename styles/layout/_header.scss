@@ -20,7 +20,7 @@
     h1{
       margin-bottom: 15px;
       font-family: 'Neonderthaw', 'Dongle';
-      font-size: 40px
+      font-size: 40px;
     }
 
   }
@@ -40,13 +40,12 @@
     background:radial-gradient(#c8c7f5,#3586ff);
 
     .text-box{
-      @include text-style(30);
       left: 100px;
       top: 60%;
 
       h1{
-        font-size: 10\0px;
-        margin-bottom: 80px;
+        font-size: 70px;
+        margin-bottom: 50px;
       }
     }
   }

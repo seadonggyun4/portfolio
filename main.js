@@ -1,20 +1,3 @@
-// [wave animation] ============================================================================================
-
-let wave1 = document.getElementById('wave1');
-let wave2 = document.getElementById('wave2');
-let wave3 = document.getElementById('wave3');
-let wave4 = document.getElementById('wave4');
-
-
-window.addEventListener('scroll',function(){
-  let value = window.scrollY
-
-  wave1.style.backgroundPositionX = 400 + value + 4 + 'px'
-  wave2.style.backgroundPositionX = 300 + value + -4 + 'px'
-  wave3.style.backgroundPositionX = 200 + value + 2 + 'px'
-  wave4.style.backgroundPositionX = 100 + value + -2 + 'px'
-})
-
 // [flip animation] ============================================================================================
 var controller = new ScrollMagic.Controller();
 
@@ -32,7 +15,7 @@ boxEls.forEach(function(boxEl){
 });
 
 
-// [flip animation] ============================================================================================
+// [틸트 animation] ============================================================================================
 boxEls.forEach(function(boxEl){
   boxEl.addEventListener("mouseover", function(){
     VanillaTilt.init(document.querySelectorAll(".box.flip"), {
@@ -42,10 +25,3 @@ boxEls.forEach(function(boxEl){
     
   })
 })
-// [project-slide: use swiper] ============================================================================================
-var swiper = new Swiper(".projects", {
-  effect: "cards",
-  grabCursor: true,
-  loop: true, // 반복재생 여부
-});
-

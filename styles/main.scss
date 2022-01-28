@@ -15,16 +15,14 @@
 @import './modules/btn';
 
 
-@import './layout/header.scss';
 @import './layout/grids';
-@import './layout/divider';
+@import './layout/header.scss';
+@import './layout/title-section';
 @import './layout/tech-section';
-@import './layout/profile-section';
 
 
-
-@import './components/wave-box';
 @import './components/skill';
+@import './components/header-menu';
 
 
 

@@ -1,0 +1,56 @@
+.header-menu{
+  @include pos-center-y;
+  @include flexbox(center,center);
+  right: 0px;
+
+  &-list{
+      position: relative;
+      width: 63px;
+      transition: all .7s ease-in-out;
+
+
+      a{
+        @include text-style(12);
+        color: #fff;
+        transition: all .7s ease-in-out;
+      }
+
+      &::before{
+        @include pos-center-y;
+        content: '';
+        width: 2px;
+        height: 12px;
+        left: 0;
+        background-color: #7e7678;
+      }
+
+      &:first-child::before{
+        display: none;
+      }
+  }
+
+  @include responsive(T){
+    &-list{
+      width: 85px;
+
+      a{
+        @include text-style(16);
+      }
+    }
+
+  }
+
+  @include responsive(D){
+    right: 30px;
+
+    &-list{
+      width: 100px;
+
+      a{
+        @include text-style(18);
+      }
+    }
+  }
+
+}
+

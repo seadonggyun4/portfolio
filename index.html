@@ -5,102 +5,140 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>i'm DongGyun</title>
+  
   <!-- google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  
   <!-- google Material icon -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <!-- style sheet -->
-  <link rel="stylesheet" href="./dist/style.css">
+  
   <!-- swiper 라이브러리 -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-</head>
+  
+  <!-- lodash 라이브러리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!-- gsap & scroll to plugin 라이브러리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js" integrity="sha512-gWlyRVDsJvp5kesJt4cSdPPLZIBdln/uSwzYgUicQcbTgRNQE4QhP5KUBIYlLYLkiKIQiuD7KUMHzqGNW/D2bQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js" integrity="sha512-agNfXmEo6F+qcj3WGryaRvl9X9wLMQORbTt5ACS9YVqzKDMzhRxY+xjgO45HCLm61OwHWR1Oblp4QSw/SGh9SA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- ScrollMagic -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- tilt.js -->
+  <script src="./asset/lib/vanilla-tilt.min.js"></script>
+
+
+
+
+  <!-- style sheet -->
+  <link rel="stylesheet" href="./dist/style.css">
+  </head>
 <body>
   <!-- ======================================== header ======================================== -->
-  
+  <header>
+    <section class="header">
+      <h1 class="header-title"><a href="#">DongGyun's Web Portfolio</a></h1>
+      <button class="header-button btn"><a href="#">Seo</a></button>
+      <ul class="header-menu">
+        <li class="header-menu-list btn-ghost"><a href="#profile">profile</a></li>
+        <li class="header-menu-list btn-ghost"><a href="#tech-skill">tech-skill</a> </li>
+        <li class="header-menu-list btn-ghost"><a href="#toy-project">toy-project</a> </li>
+        <li class="header-menu-list btn-ghost"><a href="#photo">photo</a> </li>
+      </ul>
+    </section>
+  </header>
   <!-- ======================================== main ======================================== -->
   <main>
+    <!-- ========== 타이틀 section ========== -->
+    <section class="title-section">
+      <h1 class="title fade-in"><a class="btn" href="#">Dong Gyun's</a>Portfolio</h1>
+      <p class="fade-in">Front-End Developer / UI Developer</p>
+    </section>
+    <!-- ========== 프로필 section ========== -->
+    <section class="profile-section" id="profile">
+    </section>
     <!-- ========== 기술 section ========== -->
-    <section class="tech-section" aria-label="사용할수 있는 기술들의 리스트">
+    <section class="tech-section" id="tech-skill" aria-label="사용할수 있는 기술들의 리스트">
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
             <!-- tech-skill -->
             <div class="tech-skill">
-              <!-- Front-End -->
-              <div class="skill font-end">
-                <h2 class="skill-title"> 프론트엔드</h2>
-                <div class="skill-list">
-                  <div class="skill-wrap">
-                    <div class="box html" style="--i:1">
-                      <h2 class="name">HTML</h2>
-                      <img src="./asset/img/html.png" alt="HTML" class="icon" />
-                      
-                    </div>
-                    <div class="box css" style="--i:2">
-                      <h2 class="name">CSS</h2>
-                        <img src="./asset/img/css.png" alt="Css" class="icon" />
-                       
-                    </div>
-                    <div class="box js" style="--i:3">
-                      <h2 class="name">JavaScript</h2>
-                      <img src="./asset/img/js.png" alt="JavaScript" class="icon" />
-    
+                  <!-- Front-End -->
+                  <div class="skill font-end">
+                    <h2 class="skill-title"> 프론트엔드</h2>
+                    <div class="skill-list">
+                      <div class="skill-wrap">
+                        <div class="box html" style="--i:1">
+                          <h2 class="name">HTML</h2>
+                          <img src="./asset/img/html.png" alt="HTML" class="icon" />
+                          
+                        </div>
+                        <div class="box css" style="--i:2">
+                          <h2 class="name">CSS</h2>
+                            <img src="./asset/img/css.png" alt="Css" class="icon" />
+                          
+                        </div>
+                        <div class="box js" style="--i:3">
+                          <h2 class="name">JavaScript</h2>
+                          <img src="./asset/img/js.png" alt="JavaScript" class="icon" />
+        
+                        </div>
+                      </div>
+                      <div class="skill-wrap">
+                        <div class="box ts" style="--i:4">
+                          <h2 class="name">TypeScript</h2>
+                          <img src="./asset/img/ts.png" alt="TypeScript" class="icon" />
+                        </div>
+                        <div class="box sass" style="--i:5">
+                          <h2 class="name">Sass</h2>
+                          <img src="./asset/img/sass.png" alt="Sass" class="icon" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="skill-wrap">
-                    <div class="box ts" style="--i:4">
-                      <h2 class="name">TypeScript</h2>
-                      <img src="./asset/img/ts.png" alt="TypeScript" class="icon" />
-                    </div>
-                    <div class="box sass" style="--i:5">
-                      <h2 class="name">Sass</h2>
-                      <img src="./asset/img/sass.png" alt="Sass" class="icon" />
-                    </div>
+                  <!-- framework & lib -->
+                  <div class="skill lib&framework">
+                    <h2 class="skill-title"> 라이브러리 & 프레임워크</h2>
+                    <ul class="skill-list">
+                      <div class="skill-wrap">
+                        <li class="box bootstrap" style="--i:1">
+                          <h2 class="name">Bootstrap</h2>
+                          <img src="./asset/img/Bootstrap.png" alt="Bootstrap" class="icon" />
+                        </li>
+                        <li class="box jquery" style="--i:2">
+                          <h2 class="name">JQuery</h2>
+                            <img src="./asset/img/JQuery.png" alt="JQuery" class="icon" />
+                        </li>
+                      </div>
+                    </ul>
                   </div>
-                </div>
-              </div>
-              <!-- framework & lib -->
-              <div class="skill lib&framework">
-                <h2 class="skill-title"> 라이브러리 & 프레임워크</h2>
-                <ul class="skill-list">
-                  <div class="skill-wrap">
-                    <li class="box bootstrap" style="--i:1">
-                      <h2 class="name">Bootstrap</h2>
-                      <img src="./asset/img/Bootstrap.png" alt="Bootstrap" class="icon" />
-                    </li>
-                    <li class="box jquery" style="--i:2">
-                      <h2 class="name">JQuery</h2>
-                        <img src="./asset/img/JQuery.png" alt="JQuery" class="icon" />
-                    </li>
+                  <!-- tool -->
+                  <div class="skill tool">
+                    <h2 class="skill-title">도구</h2>
+                    <ul class="skill-list">
+                      <div class="skill-wrap">
+                        <li class="box figma" style="--i:1">
+                          <h2 class="name">Figma</h2>
+                          <img src="./asset/img/figma.png" alt="Figma" class="icon" />
+                        </li
+                        >
+                        <li class="box vscode" style="--i:2">
+                          <h2 class="name">VScode</h2>
+                            <img src="./asset/img/vscode.png" alt="vscode" class="icon" />
+                        </li
+                        >
+                        <li class="box git" style="--i:3">
+                          <h2 class="name">Git</h2>
+                          <img src="./asset/img/git.png" alt="git" class="icon" />
+                        </li
+                        >
+                      </div>
+                  </ul>
                   </div>
-                </ul>
-              </div>
-              <!-- tool -->
-              <div class="skill tool">
-                <h2 class="skill-title">도구</h2>
-                <ul class="skill-list">
-                  <div class="skill-wrap">
-                    <li class="box figma" style="--i:1">
-                      <h2 class="name">Figma</h2>
-                      <img src="./asset/img/figma.png" alt="Figma" class="icon" />
-                    </li
-                    >
-                    <li class="box vscode" style="--i:2">
-                      <h2 class="name">VScode</h2>
-                        <img src="./asset/img/vscode.png" alt="vscode" class="icon" />
-                    </li
-                    >
-                    <li class="box git" style="--i:3">
-                      <h2 class="name">Git</h2>
-                      <img src="./asset/img/git.png" alt="git" class="icon" />
-                    </li
-                    >
-                  </div>
-              </ul>
-              </div>
             </div>
           </div>
   
@@ -108,6 +146,12 @@
   
       </div>
     </section> 
+    <!-- ========== 토이프로젝트 section ========== -->
+    <section class="toy-project-section" id="toy-project">
+    </section>
+    <!-- ========== 포토 section ========== -->
+    <section class="photo-section" id="photo">
+    </section>
   </main>
 
 
@@ -116,14 +160,7 @@
 
 
 
-  <!-- Gsap TweenMax -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <!-- ScrollMagic -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- tilt.js -->
-  <script src="./asset/lib/vanilla-tilt.min.js"></script>
-
+  <!-- ========================== javascript ====================== -->
   <script src="./main.js"></script>
 </body>
 </html>

@@ -18,11 +18,14 @@
 @import './layout/grids';
 @import './layout/header.scss';
 @import './layout/title-section';
+@import './layout/profile-section.scss';
 @import './layout/tech-section';
 
 
-@import './components/skill';
+
 @import './components/header-menu';
+@import './components/profile';
+@import './components/skill';
 
 
 

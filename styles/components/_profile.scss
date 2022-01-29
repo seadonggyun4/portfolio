@@ -1,0 +1,52 @@
+.profile{
+  @include pos-center-x;
+
+  .profile-photo{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-image: url(/asset/img/profile-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::after{
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      display: block;
+      height: 300px;
+      width: 300px;
+      border: 2px solid #ffd755;
+    }
+  }
+
+  .profile-info{
+    @include flexbox(start, center);
+
+    h1{
+      @include text-style(24);
+      margin-right: 10px;
+    }
+
+    p{
+      color: #7e7678;
+    }
+  }
+
+  @include responsive(T){
+    left: 25px;
+    transform: translateX(0)
+  }
+
+
+  @include responsive(D){
+    left: 50px;
+    .profile-info{
+      h1{
+        @include text-style(30);
+      }
+    }
+    
+  }
+}

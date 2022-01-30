@@ -1,5 +1,6 @@
 .profile{
   @include pos-center-x;
+  top: 80px;
 
   .profile-photo{
     position: relative;
@@ -35,18 +36,39 @@
   }
 
   @include responsive(T){
-    left: 25px;
-    transform: translateX(0)
+    left: $profile-sm-left;
+    transform: translateX(0);
+
+    .profile-photo{
+      height: 320px;
+      width: 320px;
+
+      &::after{
+        height: 320px;
+        width: 320px;
+      }
+    }
   }
 
 
   @include responsive(D){
-    left: 50px;
+    left: $profile-lg-left;
+
+    .profile-photo{
+      height: 350px;
+      width: 350px;
+
+      &::after{
+        height: 350px;
+        width: 350px
+      }
+    }
+
+
     .profile-info{
       h1{
         @include text-style(30);
       }
-    }
-    
+    } 
   }
 }

@@ -1,13 +1,12 @@
 .profile-section{
   position: relative;
-  padding: 15px;
   height: 1500px;
   width: 100%;
 
   .about-title{
     position: absolute;
-    right: 25px;
-    top: 400px;
+    right: $profile-sm-right;
+    top: $about-title-top;
     text-align: end;
     font-size: 4.86111vw;
     line-height: 70px;
@@ -16,18 +15,21 @@
     span{
       text-decoration: underline;
     }
+
+    .change-color{
+      color: #5e96ff;
+    }
   }
   .about-text{
     @include text-style(16);
     position: absolute;
-    top: 800px;
-    left: 10px;
+    top: $about-tex-top;
+    left: $profile-sm-left - 15px;
     padding: 15px;
     color: #272418;
   }
 
   @include responsive(T){
-    padding: 50px;
 
     .about-title{
       font-size: 3.8vw;
@@ -39,16 +41,15 @@
   }
 
   @include responsive(D){
-    padding: 100px;
 
     .about-title{
-      right: 50px;
+      right: $profile-lg-right;
       font-size: 3vw;
       line-height: 80px;
     }
 
     .about-text{
-      left: 35px;
+      left: $profile-lg-left - 15px;
     }
   }
 }

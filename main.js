@@ -1,5 +1,5 @@
 // [header title logo animation: header] ============================================================================================
-// scrollMagic 라이브러리 사용
+// gsap 라이브러리 사용
 // lodash 라이브러리 사용
 const HeaderBtnEl = document.querySelector('.header-button');
 const HeadertitleEl = document.querySelector('.header-title');
@@ -51,6 +51,8 @@ window.addEventListener('scroll',_.throttle(function(){
 
 }));
 // [header-bar change color: header Btn & Menu] ============================================================================================
+// gsap 라이브러리 사용
+// lodash 라이브러리 사용
 const headerMenuListEl = document.querySelectorAll('.header-menu-list a');
 
 
@@ -77,8 +79,8 @@ window.addEventListener('scroll',_.throttle(function(){
 }))
 
 
-
-
+// [title-section tilte 나타남 효과 : title-section] ============================================================================================
+// gsap 라이브러리 사용
 const fadeEls = document.querySelectorAll('.title-section .fade-in');
 
 fadeEls.forEach(function(fadeEl, index){
@@ -90,6 +92,25 @@ fadeEls.forEach(function(fadeEl, index){
     delay: (index + 1) * .7
   });
 });
+
+// [profile about-title 색 변환 효과 : profile-section] ============================================================================================
+// scrollMagic 라이브러리 사용
+var controller = new ScrollMagic.Controller();
+
+const pEls = document.querySelectorAll('.about-title p')
+pEls.forEach(function(pEl){
+  new ScrollMagic
+      .Scene({
+        triggerElement: pEl,// 애니메이션 시작 객체
+        triggerHook: .5, // trigger 위치
+      })
+      .setClassToggle(pEl, 'change-color')
+      .addTo(controller)
+})
+
+
+
+
 
 
 // [flip animation: tech-skill-section] ============================================================================================

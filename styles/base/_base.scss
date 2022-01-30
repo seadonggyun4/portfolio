@@ -5,7 +5,14 @@
 }
 
 body{
-  font-family: 'Roboto Condensed', sans-serif;;
+  font-family: 'Roboto Condensed', sans-serif;
+
+  //드래그 방지
+  -webkit-user-select:none; 
+  -moz-user-select:none; 
+  -ms-user-select:none; 
+  user-select:none
+
 }
 
 a{

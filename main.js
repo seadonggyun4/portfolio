@@ -79,6 +79,22 @@ window.addEventListener('scroll',_.throttle(function(){
 }))
 
 
+// [색션 와이프: title-section] ============================================================================================
+// scrollMagic 라이브러리 사용
+var controller = new ScrollMagic.Controller(); //scrollMagic 라이브러리 컨트롤러 생성 -> 한번만 선언하면 된다.
+
+const panelEl = document.querySelector('.panel')
+
+  new ScrollMagic
+    .Scene({
+      triggerElement: panelEl,// 애니메이션 시작 객체
+      triggerHook: 'onLeave', // trigger 위치 -> onLeave는 0과 같은 의미
+      duration:"100%" //애니메이션 끝나는 위치 설정
+    })
+    .setPin(panelEl, {pushFollowers: false})
+    .addTo(controller)
+
+
 // [title-section tilte 나타남 효과 : title-section] ============================================================================================
 // gsap 라이브러리 사용
 const fadeEls = document.querySelectorAll('.title-section .fade-in');
@@ -95,14 +111,16 @@ fadeEls.forEach(function(fadeEl, index){
 
 // [profile about-title 색 변환 효과 : profile-section] ============================================================================================
 // scrollMagic 라이브러리 사용
-var controller = new ScrollMagic.Controller();
+// var controller = new ScrollMagic.Controller();
 
 const pEls = document.querySelectorAll('.about-title p')
 pEls.forEach(function(pEl){
+
   new ScrollMagic
       .Scene({
         triggerElement: pEl,// 애니메이션 시작 객체
         triggerHook: .5, // trigger 위치
+        duration:100 //애니메이션 끝나는 위치 설정
       })
       .setClassToggle(pEl, 'change-color')
       .addTo(controller)
@@ -115,7 +133,7 @@ pEls.forEach(function(pEl){
 
 // [flip animation: tech-skill-section] ============================================================================================
 // scrollMagic 라이브러리 사용
-var controller = new ScrollMagic.Controller();
+// var controller = new ScrollMagic.Controller();
 
 const boxEls = document.querySelectorAll('.box');
 

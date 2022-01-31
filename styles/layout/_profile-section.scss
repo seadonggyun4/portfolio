@@ -9,8 +9,10 @@
     top: $about-title-top;
     text-align: end;
     font-size: 4.86111vw;
+    font-weight: 500;
     line-height: 70px;
-    color: #e2e2e2;
+    color: transparent;
+    -webkit-text-stroke: 1px #c1c1c1;
     
     span{
       text-decoration: underline;
@@ -18,6 +20,7 @@
 
     .change-color{
       color: #5e96ff;
+      -webkit-text-stroke: 1px #5e96ff;
     }
   }
   .about-text{

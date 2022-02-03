@@ -167,7 +167,8 @@ boxEls.forEach(function(boxEl){
 
 
 
-
+// [bg-effect 애니메이션 : toy-project-section] ============================================================================================
+// jquery사용
 const cardEls = document.querySelectorAll('.project-card')
 const spanEls = document.querySelectorAll('.project-card span')
 
@@ -179,9 +180,7 @@ cardEls.forEach(function(cardEl){
     x = e.pageX - left1,
     y = e.pageY - top1;
 
-    console.log($(this))
-    console.log(this)
-
+    //jquery 문법
     $(this).find('span').css({top:y, left:x})
   })
 
@@ -192,6 +191,7 @@ cardEls.forEach(function(cardEl){
     x = e.pageX - left2,
     y = e.pageY - top2;
 
+    //jquery 문법
     $(this).find('span').css({top:y, left:x})
   })
 })

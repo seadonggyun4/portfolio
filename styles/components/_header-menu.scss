@@ -12,7 +12,7 @@
       a{
         @include text-style(12);
         color: #fff;
-        transition: all .7s ease-in-out;
+        transition: all .5s ease-in-out;
       }
 
       &::before{

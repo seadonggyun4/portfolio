@@ -1,6 +1,8 @@
 .tech-section{
+  position: relative;
+  padding-top: 100px;
   font-family: 'Dongle', sans-serif;
-  background: #FAFAFA;
+  background: #fff;
 
   .tech-skill{
     @include flexbox-column(center, center);

@@ -6,6 +6,7 @@
 @import './constants/breakpoint';
 @import './constants/typography';
 @import './constants/profile-grids';
+@import './constants/color';
 
 
 @import './mixins/flexbox';
@@ -22,13 +23,14 @@
 @import './layout/profile-section.scss';
 @import './layout/tech-section';
 @import './layout/toy-project-section';
+@import './layout/footer';
 
 
 
 @import './components/header-menu';
 @import './components/profile';
 @import './components/skill';
-@import './components/project-card';
+@import './components/toy-project-card';
 @import './components/toy-project-text-group';
 
 

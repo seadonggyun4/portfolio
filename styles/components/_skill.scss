@@ -4,7 +4,7 @@
     @include  text-style(30);
     margin-bottom:25px;
     font-weight: 500;
-    border-bottom: 3px solid #5e96ff;
+    border-bottom: 3px solid $border-color;
     
   }
 
@@ -29,7 +29,7 @@
         max-width: 150px;
         min-width: 100px;
         height: 180px;
-        background: #232323;
+        background: $card-bg-color;
         border-radius: 20px;
         overflow: hidden;
         transform: rotateY(180deg) ; 

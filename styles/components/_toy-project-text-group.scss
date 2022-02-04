@@ -21,7 +21,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #002468; 
+      background: $title-bg-color; 
       transform-origin: right; /*오른쪽*/
       transition: .5s;
       transition-delay: 0;  /*0초 -> 글자가 작아지기전 먼저 작아저야한다.*/
@@ -43,7 +43,7 @@
     display: inline-block;
     margin-top: 5px;
     color: #e2e2e2;
-    border-bottom: 3px solid #5e96ff;
+    border-bottom: 3px solid $border-color;
     font-family: 'Dongle', sans-serif;
     font-weight: 500;
     font-size: 2em;
@@ -60,7 +60,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #5e96ff; 
+      background: $border-color; 
       transform-origin: right; /*오른쪽*/
       transition: .5s;
       transition-delay: 0;  /*0초 -> 글자가 작아지기전 먼저 작아저야한다.*/

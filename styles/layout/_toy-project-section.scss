@@ -1,9 +1,9 @@
 .toy-project-section{
   @include flexbox-column(center,center);
   position: relative;
-  height: 1500px;
+  height: 1300px;
   width: 100%;
-  background-color: #FAFAFA; 
+  background-color: $section-bg-color; 
 
 
   .imgBx{

@@ -56,7 +56,7 @@ window.addEventListener('scroll',_.throttle(function(){
   
 
 }));
-// [header-bar change color: header Btn & Menu] ============================================================================================
+// [header-bar 색상 변경: header Btn & Menu] ============================================================================================
 // gsap 라이브러리 사용
 // lodash 라이브러리 사용
 const headerMenuListEl = document.querySelectorAll('.header-menu-list a');
@@ -125,10 +125,28 @@ pEls.forEach(function(pEl){
   new ScrollMagic
       .Scene({
         triggerElement: pEl,// 애니메이션 시작 객체
-        triggerHook: .5, // trigger 위치
-        duration:100 //애니메이션 끝나는 위치 설정
+        triggerHook: .3, // trigger 위치
+        duration:70 //애니메이션 끝나는 위치 설정
       })
       .setClassToggle(pEl, 'change-color')
+      .addTo(controller)
+})
+
+// [profile about-text 나타남 효과 : profile-section] ============================================================================================
+// scrollMagic 라이브러리 사용
+// var controller = new ScrollMagic.Controller();
+
+
+const textEls = document.querySelectorAll('.about-text .text')
+textEls.forEach(function(textEl){
+
+  new ScrollMagic
+      .Scene({
+        triggerElement: textEl,// 애니메이션 시작 객체
+        triggerHook: .7,// trigger 위치
+        reverse: false,//애니메이션 한번만실행
+      })
+      .setClassToggle(textEl,'fade-in')
       .addTo(controller)
 })
 
@@ -137,7 +155,8 @@ pEls.forEach(function(pEl){
 
 
 
-// [flip animation: tech-skill-section] ============================================================================================
+
+// [뒤집어지는 animation: tech-skill-section] ============================================================================================
 // scrollMagic 라이브러리 사용
 // var controller = new ScrollMagic.Controller();
 
@@ -205,3 +224,40 @@ cardEls.forEach(function(cardEl){
 // pageX, pageY  => 브라우페이지에서 x,y 축 좌표
 // .offset()은 선택한 요소의 좌표를 가져오거나 특정 좌표로 이동시킵니다.
 // 위에서 offset 메서드는 이벤트가 걸려 있는 DOM객체를 기준으로 좌표(x,y)를 출력합니다.
+
+
+
+// [나타남(fade-in) 애니메이션 : toy-project-section] ============================================================================================
+//scrollMagic 라이브러리 사용
+// var controller = new ScrollMagic.Controller();
+
+const imgBxEls = document.querySelectorAll('.toy-project-section .imgBx')
+const projectCardEls = document.querySelectorAll('.toy-project-section .project-card')
+
+//imgBxEls 탐색
+imgBxEls.forEach(function(imgBxEl){
+  //imgBxEl 효과부여
+  new ScrollMagic
+      .Scene({
+        triggerElement: imgBxEl,
+        triggerHook: .6,
+        reverse: false,
+      })
+      .setClassToggle(imgBxEl, 'fade-in')
+      .addTo(controller)
+})
+
+//projectCardEls 탐색
+projectCardEls.forEach(function(projectCardEl){
+  //projectCardEl 효과 부여
+  new ScrollMagic
+      .Scene({
+        triggerElement:projectCardEl,
+        triggerHook: .6,
+        reverse:false,
+      })
+      .setClassToggle(projectCardEl, 'fade-in')
+      .addTo(controller)
+})
+
+

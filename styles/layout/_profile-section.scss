@@ -31,6 +31,17 @@
     left: $profile-sm-left - 15px;
     padding: 15px;
     color: #272418;
+
+    .text{
+      transition: all .5s ease-in-out;
+      transform: translateX(-100px);
+      opacity: 0;
+
+      &.fade-in{
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
   }
 
   @include responsive(T){

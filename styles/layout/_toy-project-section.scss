@@ -15,13 +15,21 @@
     border-radius: 50%;
     background-color: beige;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: all .5s ease-in-out;
+    transition-delay: calc(var(--i) * 0.2s);
     transform: translateX(-50%);
+    opacity: 0;
     z-index: $imgBx-z-index;
 
     img{
       width: 100%;
       height: 100%;
       border-radius: 50%;
+    }
+
+    &.fade-in{
+      transform: translateX(-50%) translateY(-100px);
+      opacity: 1;
     }
 
     &.tomorrow-house{
@@ -32,6 +40,8 @@
       background-color: #D59F9F;
     }
   }
+
+
 }
 
 

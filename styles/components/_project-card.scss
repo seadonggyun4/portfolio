@@ -6,7 +6,9 @@
   border-radius: 4px;
   background: #fff;
   box-shadow: 0 5px 202px rgba(0, 0, 0, 0.2);
-  transition: all .3s ease-in-out;
+  transition: all .5s ease-in-out;
+  transition-delay: calc(var(--i) * 0.2s);
+  opacity: 0;
   overflow: hidden;
   cursor: pointer;
 
@@ -67,6 +69,11 @@
       visibility: visible;
       opacity: 1;
     }
+  }
+
+  &.fade-in{
+    transform: translateY(-100px);
+    opacity: 1;
   }
 
 }

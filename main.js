@@ -6,36 +6,39 @@ const HeadertitleEl = document.querySelector('.header-title');
 
 window.addEventListener('scroll',_.throttle(function(){
   //gsap.to(적용요소, 지속시간, 스타일옵션)
+  
+  // Y축 스크롤값이 100이상일때
+  if(window.scrollY > 100){
 
-
-    // Y축 스크롤값이 100이상일때
-    if(window.scrollY > 100){
-
-      if(window.innerWidth >= 1200){
-        //데스크탑 : header button 등장
-        gsap.to(HeaderBtnEl, .1, {
-          opacity:1,
-          x:30,
-        });
-      } else if(window.innerWidth >= 768){
-        //타블렛 : header button 등장 
-        gsap.to(HeaderBtnEl, .1, {
-          opacity:1,
-          x:15,
-        });
-      } else{
-        //모바일 : header button 등장
-        gsap.to(HeaderBtnEl, .1, {
-          opacity:1,
-          x:5,
-        });
-      }
-      //header title 숨김
-      gsap.to(HeadertitleEl,.1,{
-        opacity:0,
-        x:-100
-      })
+    if(window.innerWidth >= 1200){
+      //데스크탑 : header button 등장
+      gsap.to(HeaderBtnEl, .1, {
+        opacity:1,
+        x:30,
+      });
+    } else if(window.innerWidth >= 768){
+      //타블렛 : header button 등장 
+      gsap.to(HeaderBtnEl, .1, {
+        opacity:1,
+        x:15,
+      });
     } else{
+      //모바일 : header button 등장
+      gsap.to(HeaderBtnEl, .1, {
+        opacity:1,
+        x:5,
+      });
+    }
+
+    //header title 숨김
+    gsap.to(HeadertitleEl,.1,{
+      opacity:0,
+      x:-100
+    })
+  } else{
+
+    //타블렛 크기 이상에서만
+    if(window.innerWidth >= 768){
       //header button 숨김
       gsap.to(HeaderBtnEl, .1, {
         opacity:0,
@@ -47,6 +50,9 @@ window.addEventListener('scroll',_.throttle(function(){
         x:15
       })
     }
+  }
+  
+
   
 
 }));

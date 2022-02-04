@@ -4,13 +4,13 @@
   left: 0;
   width: 100%;
   height: 75px;
-  z-index: $header-z-index;
   background-color: transparent;
+  z-index: $header-z-index;
   
 
   &-title{
     @include pos-center-y;
-    @include text-style(18);
+    @include text-style(14);
     left: 15px;
     opacity: 0;
     transition: all .7s ease-in-out;
@@ -36,24 +36,24 @@
   }
 
   @include responsive(T){
+    &-title{
+      opacity: 1;
+    }
+    
     &-button{
       height: 45px;
       opacity: 0;
-    }
-
-    &-title{
-      opacity: 1;
     }
   }
 
 
   @include responsive(D){
+    &-title{
+      @include text-style(18);
+    }
+    
     &-button{
       height: 50px;
-    }
-
-    &-title{
-      @include text-style(24);
     }
   }
 

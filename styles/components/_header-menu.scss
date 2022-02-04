@@ -5,7 +5,7 @@
 
   &-list{
       position: relative;
-      width: 63px;
+      width: 80px;
       transition: all .7s ease-in-out;
 
 
@@ -34,7 +34,7 @@
       width: 85px;
 
       a{
-        @include text-style(16);
+        @include text-style(14);
       }
     }
 
@@ -47,7 +47,7 @@
       width: 100px;
 
       a{
-        @include text-style(18);
+        @include text-style(16);
       }
     }
   }

@@ -227,6 +227,42 @@ cardEls.forEach(function(cardEl){
 
 
 
+
+
+
+// [toy-project-title 애니메이션 : toy-project-section] ============================================================================================
+//scrollMagic 라이브러리 사용
+// var controller = new ScrollMagic.Controller();
+
+const toyTitleEl = document.querySelector('.toy-project-text-group .toy-project-title')
+const toyTextEl = document.querySelector('.toy-project-text-group .toy-project-text')
+
+new ScrollMagic
+    .Scene({
+      triggerElement:toyTitleEl,
+      triggerHook:.6,
+    })
+    .setClassToggle(toyTitleEl,'active')
+    .addTo(controller)
+
+
+
+new ScrollMagic
+    .Scene({
+      triggerElement:toyTextEl,
+      triggerHook:.6,
+    })
+    .setClassToggle(toyTextEl,'active')
+    .addTo(controller)
+
+
+
+
+
+
+
+
+
 // [나타남(fade-in) 애니메이션 : toy-project-section] ============================================================================================
 //scrollMagic 라이브러리 사용
 // var controller = new ScrollMagic.Controller();
@@ -259,5 +295,8 @@ projectCardEls.forEach(function(projectCardEl){
       .setClassToggle(projectCardEl, 'fade-in')
       .addTo(controller)
 })
+
+
+
 
 

@@ -1,5 +1,5 @@
 .toy-project-section{
-  @include flexbox(center,center);
+  @include flexbox-column(center,center);
   position: relative;
   height: 1500px;
   width: 100%;

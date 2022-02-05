@@ -1,8 +1,8 @@
-// [header title logo animation: header] ============================================================================================
+// [header 타이틀 로고 animation: header] ============================================================================================
 // gsap 라이브러리 사용
 // lodash 라이브러리 사용
-const HeaderBtnEl = document.querySelector('.header-button');
-const HeadertitleEl = document.querySelector('.header-title');
+const headerBtnEl = document.querySelector('.header-button');
+const headertitleEl = document.querySelector('.header-title');
 
 window.addEventListener('scroll',_.throttle(function(){
   //gsap.to(적용요소, 지속시간, 스타일옵션)
@@ -12,26 +12,26 @@ window.addEventListener('scroll',_.throttle(function(){
 
     if(window.innerWidth >= 1200){
       //데스크탑 : header button 등장
-      gsap.to(HeaderBtnEl, .1, {
+      gsap.to(headerBtnEl, .1, {
         opacity:1,
         x:30,
       });
     } else if(window.innerWidth >= 768){
       //타블렛 : header button 등장 
-      gsap.to(HeaderBtnEl, .1, {
+      gsap.to(headerBtnEl, .1, {
         opacity:1,
         x:15,
       });
     } else{
       //모바일 : header button 등장
-      gsap.to(HeaderBtnEl, .1, {
+      gsap.to(headerBtnEl, .1, {
         opacity:1,
         x:5,
       });
     }
 
     //header title 숨김
-    gsap.to(HeadertitleEl,.1,{
+    gsap.to(headertitleEl,.1,{
       opacity:0,
       x:-100
     })
@@ -40,49 +40,107 @@ window.addEventListener('scroll',_.throttle(function(){
     //타블렛 크기 이상에서만
     if(window.innerWidth >= 768){
       //header button 숨김
-      gsap.to(HeaderBtnEl, .1, {
+      gsap.to(headerBtnEl, .1, {
         opacity:0,
         x:-100
       })
       //header title 등장
-      gsap.to(HeadertitleEl,.1,{
+      gsap.to(headertitleEl,.1,{
         opacity:1,
         x:15
       })
     }
   }
   
-
-  
-
 }));
+
+// [header 타이틀 로고 색상 변경: header] ============================================================================================
+// gsap 라이브러리 사용
+const headertitleAEl = document.querySelector('.header-title a');
+
+
+//headerTitle 색상변경
+headertitleAEl.addEventListener('mouseover',function(){
+  gsap.to(this,1,{color:"#5e96ff"})
+})
+headertitleAEl.addEventListener('mouseout',function(){
+  gsap.to(this, 1,{
+    color:"#fff"
+  })
+})
+
+
+//headerBtn 색상변경
+headerBtnEl.addEventListener('mouseover',function(){
+  gsap.to(this,.01,{
+    backgroundColor:"#5e96ff"
+  })
+})
+headerBtnEl.addEventListener('mouseout',function(){
+  if(scrollY >= 700){
+    gsap.to(this,.01,{
+      backgroundColor:"#191015"
+    })
+  } else {
+    gsap.to(this,.01, {
+      backgroundColor: "transparent"
+    })
+  }
+})
+
+
+
+
+
+
+
+
 // [header-bar 색상 변경: header Btn & Menu] ============================================================================================
 // gsap 라이브러리 사용
 // lodash 라이브러리 사용
-const headerMenuListEl = document.querySelectorAll('.header-menu-list a');
+const headerMenuListEls = document.querySelectorAll('.header-menu-list a');
 
 
 window.addEventListener('scroll',_.throttle(function(){
   if(scrollY >= 700){
     //header 메뉴
-    gsap.to(headerMenuListEl,.1,{
+    gsap.to(headerMenuListEls,.1,{
       color: "#191015"
     })
     //header 버튼
-    gsap.to(HeaderBtnEl,.1,{
+    gsap.to(headerBtnEl,.1,{
       backgroundColor: "#191015"
     })
   } else {
     //header 메뉴
-    gsap.to(headerMenuListEl,.1,{
+    gsap.to(headerMenuListEls,.1,{
       color: "#fff"
     })
     //header 버튼
-    gsap.to(HeaderBtnEl,.1,{
+    gsap.to(headerBtnEl,.1,{
       backgroundColor: "transparent"
     })
   }
 }))
+
+//header menu 색상변경
+headerMenuListEls.forEach(function(headerMenuListEl){
+  //마우스 오버시 -> blue()함수 사용
+  headerMenuListEl.addEventListener('mouseover',function(){
+    gsap.to(this,.1,{color:"#5e96ff"})
+  })
+  //마우스 아웃시
+  headerMenuListEl.addEventListener('mouseout',function(){
+    if(scrollY >= 700){
+      gsap.to(this,.001,{color:"#191015"})
+    } else {
+      gsap.to(this,.001,{color:"#fff"})
+    }
+    
+  })
+})
+
+
 
 
 // [색션 와이프: title-section] ============================================================================================
@@ -101,7 +159,7 @@ const panelEl = document.querySelector('.panel')
     .addTo(controller)
 
 
-// [title-section tilte 나타남 효과 : title-section] ============================================================================================
+// [title-section tilte 나타남 효과(fade-in) : title-section] ============================================================================================
 // gsap 라이브러리 사용
 const fadeEls = document.querySelectorAll('.title-section .fade-in');
 
@@ -132,7 +190,7 @@ pEls.forEach(function(pEl){
       .addTo(controller)
 })
 
-// [profile about-text 나타남 효과 : profile-section] ============================================================================================
+// [profile about-text 나타남 효과(fade-in) : profile-section] ============================================================================================
 // scrollMagic 라이브러리 사용
 // var controller = new ScrollMagic.Controller();
 
@@ -156,7 +214,7 @@ textEls.forEach(function(textEl){
 
 
 
-// [뒤집어지는 animation: tech-skill-section] ============================================================================================
+// [뒤집어지는(flip) animation: tech-skill-section] ============================================================================================
 // scrollMagic 라이브러리 사용
 // var controller = new ScrollMagic.Controller();
 

@@ -1,5 +1,66 @@
-footer{
+.footer{
+  @include flexbox-column(center,center);
   height: 600px;
   width: 100%;
   background: #383838;
+
+
+  .footer-title{
+    @include text-style(16);
+    margin-bottom: 80px;
+    padding: 10px;
+    color: #e2e2e2;
+    font-weight: 300;
+    border-bottom: 3px solid $border-color;
+  }
+
+  .mail{
+    margin-bottom: 50px;
+    color: #e2e2e2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+      color: $border-color;
+      transform: scale(0.9);
+    }
+  }
+
+  p{
+    @include text-style(12);
+    color: #78767b; 
+  }
+
+  @include responsive(T){
+    .footer-title{
+      @include text-style(18);
+    }
+
+    .mail{
+      font-size: 50px
+    }
+
+    p{
+      @include text-style(14);
+    }
+  }
+
+
+  @include responsive(D){
+    .footer-title{
+      @include text-style(24);
+      font-size: 20px;
+    }
+
+    .mail{
+      font-size: 65px;
+    }
+
+    p{
+      @include text-style(16);
+    }
+  }
 }
+

@@ -356,5 +356,28 @@ projectCardEls.forEach(function(projectCardEl){
 
 
 
+// [to-top 버튼 애니메이션 : to-top] ============================================================================================
+//gsap 라이브러리 사용
 
+const toTopEl = document.querySelector('.to-top')
 
+window.addEventListener('scroll',_.throttle(function(){
+
+  //scrollY>=1000 일때 to-top버튼 등장
+  if(window.scrollY >= 1000){
+    gsap.to(toTopEl,.15,{
+      x:0
+    })
+  }else{
+    gsap.to(toTopEl,.15,{
+      x:100
+    })
+  }
+}))
+
+//to-top 버튼 클릭시 window창 최상위로 이동
+toTopEl.addEventListener('click',function(){
+  gsap.to(window,.7,{
+    scrollTo: 0
+  })
+})

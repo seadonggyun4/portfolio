@@ -36,6 +36,12 @@
       &:first-child::before{
         display: none;
       }
+
+      &:active, &:focus{
+        outline: none;
+        box-shadow: none;
+        -webkit-tap-highlight-color: transparent;
+      }
   }
 
   @include responsive(T){

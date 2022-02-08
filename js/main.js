@@ -154,6 +154,8 @@ var controller = new ScrollMagic.Controller(); //scrollMagic 라이브러리 컨
 
 const panelEl = document.querySelector('.panel')
 
+if(window.innerWidth > 768){
+
   new ScrollMagic
     .Scene({
       triggerElement: panelEl,// 애니메이션 시작 객체
@@ -162,6 +164,7 @@ const panelEl = document.querySelector('.panel')
     })
     .setPin(panelEl, {pushFollowers: false})
     .addTo(controller)
+}
 
 
 // [title-section tilte 나타남 효과(fade-in) : title-section] ============================================================================================

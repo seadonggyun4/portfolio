@@ -18,6 +18,12 @@
     a{
       color: #fff;
     }
+
+    &:active, &:focus{
+      outline: none;
+      box-shadow: none;
+      -webkit-tap-highlight-color: transparent;
+    }
   }
 
   &-button{
@@ -32,6 +38,12 @@
 
     a{
       color: #fff;
+    }
+
+    &:active, &:focus{
+      outline: none;
+      box-shadow: none;
+      -webkit-tap-highlight-color: transparent;
     }
   }
 

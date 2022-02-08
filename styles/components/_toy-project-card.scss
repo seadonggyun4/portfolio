@@ -51,8 +51,21 @@
     }
   }
 
+  .project-btn{
+    @include pos-center-x;
+    margin-top: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .9s ease-in-out;
+    z-index: $project-btn-z-index;
 
-  &:hover{
+    a{
+      color: #fff;
+    }
+  }
+
+
+  &:hover, &:active, &:focus{
     height: 420px;
 
     .bg-effect{
@@ -65,6 +78,12 @@
       visibility: visible;
       opacity: 1;
     }
+
+    .project-btn{
+      opacity: 1;
+      visibility: visible;
+    }
+
   }
 
   &:active, &:focus{

@@ -16,6 +16,11 @@
     background-color: $border-color;
   }
 
+  &:active, &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+
 
   @include responsive(T){
     bottom: 30px;

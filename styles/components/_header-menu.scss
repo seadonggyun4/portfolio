@@ -16,6 +16,12 @@
         height: 100%;
         color: #fff;
         transition: all .5s ease-in-out;
+
+        &:active, &:focus{
+          outline: none;
+          box-shadow: none;
+          -webkit-tap-highlight-color: transparent;
+        }
       }
 
       &::before{

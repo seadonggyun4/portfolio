@@ -100,6 +100,12 @@
           transition: 0.5s;
           opacity: 0;
         }
+
+        &:active, &:focus{
+          outline: none;
+          box-shadow: none;
+          -webkit-tap-highlight-color: transparent;
+        }
     
       }
   

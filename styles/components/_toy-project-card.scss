@@ -67,6 +67,12 @@
     }
   }
 
+  &:active, &:focus{
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   &.fade-in{
     transform: translateY(-100px);
     opacity: 1;

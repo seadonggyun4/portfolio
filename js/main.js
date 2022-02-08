@@ -1,3 +1,8 @@
+//main.scss 연결
+import '../styles/main.scss'
+
+
+
 // [header 타이틀 로고 animation: header] ============================================================================================
 // gsap 라이브러리 사용
 // lodash 라이브러리 사용
@@ -184,7 +189,7 @@ pEls.forEach(function(pEl){
       .Scene({
         triggerElement: pEl,// 애니메이션 시작 객체
         triggerHook: .3, // trigger 위치
-        duration:70 //애니메이션 끝나는 위치 설정
+        duration:90 //애니메이션 끝나는 위치 설정
       })
       .setClassToggle(pEl, 'change-color')
       .addTo(controller)
@@ -257,22 +262,22 @@ const spanEls = document.querySelectorAll('.project-card span')
 
 cardEls.forEach(function(cardEl){
   cardEl.addEventListener('mouseenter',function(e){
-    let top1 = window.pageYOffset + cardEl.getBoundingClientRect().top
-    let left1 = window.pageXOffset + cardEl.getBoundingClientRect().left
+    // let top1 = window.pageYOffset + cardEl.getBoundingClientRect().top
+    // let left1 = window.pageXOffset + cardEl.getBoundingClientRect().left
 
-    x = e.pageX - left1,
-    y = e.pageY - top1;
+    x = e.pageX - $(this).offset().left,
+    y = e.pageY - $(this).offset().top;
 
     //jquery 문법
     $(this).find('span').css({top:y, left:x})
   })
 
   cardEl.addEventListener('mouseout',function(e){
-    let top2 = window.pageYOffset + cardEl.getBoundingClientRect().top
-    let left2 = window.pageXOffset + cardEl.getBoundingClientRect().left
+    // let top2 = window.pageYOffset + cardEl.getBoundingClientRect().top
+    // let left2 = window.pageXOffset + cardEl.getBoundingClientRect().left
 
-    x = e.pageX - left2,
-    y = e.pageY - top2;
+    x = e.pageX - $(this).offset().left,
+    y = e.pageY - $(this).offset().top;
 
     //jquery 문법
     $(this).find('span').css({top:y, left:x})

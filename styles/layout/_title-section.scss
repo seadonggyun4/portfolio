@@ -8,7 +8,7 @@
   .title{
     // @include flexbox(center,center);
     font-family: 'Prata', serif;
-    margin-bottom: -200px;
+    margin-bottom: -230px;
     color: #fff;
     text-align: center;
     font-size: 50px;
@@ -22,7 +22,7 @@
 
   p{
     @include pos-center-x;
-    bottom: -100px;
+    bottom: -150px;
     font-family: 'Prata', serif;
     font-size: 250px;
     color: #009bfc;

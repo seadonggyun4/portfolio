@@ -293,7 +293,7 @@ container-size는 그리드시스템이 적용되는 범위
 }
 .title-section .title {
   font-family: "Prata", serif;
-  margin-bottom: -200px;
+  margin-bottom: -230px;
   color: #fff;
   text-align: center;
   font-size: 50px;
@@ -308,7 +308,7 @@ container-size는 그리드시스템이 적용되는 범위
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -100px;
+  bottom: -150px;
   font-family: "Prata", serif;
   font-size: 250px;
   color: #009bfc;

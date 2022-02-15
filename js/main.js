@@ -123,25 +123,6 @@ window.addEventListener('scroll',_.throttle(function(){
   }
 }))
 
-
-
-//header menu 색상변경
-// headerMenuListEls.forEach(function(headerMenuListEl){
-//   //마우스 오버시 -> blue()함수 사용
-//   headerMenuListEl.addEventListener('mouseover',function(){
-//     gsap.to(this,.1,{color:"#5e96ff"})
-//   })
-//   //마우스 아웃시
-//   headerMenuListEl.addEventListener('mouseout',function(){
-//     if(scrollY >= 700){
-//       gsap.to(this,.001,{color:"#191015"})
-//     } else {
-//       gsap.to(this,.001,{color:"#fff"})
-//     }
-    
-//   })
-// })
-
 // [header-menu  밑줄 이동: header menu] ============================================================================================
 let horizontalBar = document.getElementById('horizontal-underline')
 let horizontalMenus = document.querySelectorAll('.header-menu-list');
@@ -153,12 +134,11 @@ horizontalMenus.forEach( (menu) =>
 )
 
 function horizontalIndicator(e){
+  horizontalBar.style.display = 'block';
   horizontalBar.style.left = e.offsetLeft + 'px';
   horizontalBar.style.width = e.offsetWidth + 'px';
   horizontalBar.style.top = e.offsetTop + e.offsetHeight + 'px';
-  console.log(horizontalBar.style.left)
 }
-
 
 
 

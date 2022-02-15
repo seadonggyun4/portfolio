@@ -296,7 +296,7 @@ container-size는 그리드시스템이 적용되는 범위
   margin-bottom: -200px;
   color: #fff;
   text-align: center;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 400;
   line-height: 80px;
   opacity: 0;
@@ -618,7 +618,7 @@ container-size는 그리드시스템이 적용되는 범위
     width: 85px;
   }
   .header-menu-list a {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
   }
@@ -631,9 +631,9 @@ container-size는 그리드시스템이 적용되는 범위
     width: 100px;
   }
   .header-menu-list a {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -1102,6 +1102,7 @@ container-size는 그리드시스템이 적용되는 범위
   transition: all 0.3s;
   transform: translateX(100px);
   cursor: pointer;
+  z-index: 5;
 }
 .to-top:hover {
   background-color: #5e96ff;

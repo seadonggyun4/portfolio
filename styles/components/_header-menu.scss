@@ -3,6 +3,16 @@
   @include flexbox(center,center);
   right: 0px;
 
+  #horizontal-underline{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: $border-color;
+    transition: all .3s ease-in-out;
+  }
+
   &-list{
       position: relative;
       width: 80px;

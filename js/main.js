@@ -98,7 +98,7 @@ headerBtnEl.addEventListener('mouseout',function(){
 // [header-bar 색상 변경: header Btn & Menu] ============================================================================================
 // gsap 라이브러리 사용
 // lodash 라이브러리 사용
-const headerMenuListEls = document.querySelectorAll('.header-menu-list a');
+let headerMenuListEls = document.querySelectorAll('.header-menu-list a');
 
 
 window.addEventListener('scroll',_.throttle(function(){
@@ -123,22 +123,42 @@ window.addEventListener('scroll',_.throttle(function(){
   }
 }))
 
+
+
 //header menu 색상변경
-headerMenuListEls.forEach(function(headerMenuListEl){
-  //마우스 오버시 -> blue()함수 사용
-  headerMenuListEl.addEventListener('mouseover',function(){
-    gsap.to(this,.1,{color:"#5e96ff"})
-  })
-  //마우스 아웃시
-  headerMenuListEl.addEventListener('mouseout',function(){
-    if(scrollY >= 700){
-      gsap.to(this,.001,{color:"#191015"})
-    } else {
-      gsap.to(this,.001,{color:"#fff"})
-    }
+// headerMenuListEls.forEach(function(headerMenuListEl){
+//   //마우스 오버시 -> blue()함수 사용
+//   headerMenuListEl.addEventListener('mouseover',function(){
+//     gsap.to(this,.1,{color:"#5e96ff"})
+//   })
+//   //마우스 아웃시
+//   headerMenuListEl.addEventListener('mouseout',function(){
+//     if(scrollY >= 700){
+//       gsap.to(this,.001,{color:"#191015"})
+//     } else {
+//       gsap.to(this,.001,{color:"#fff"})
+//     }
     
-  })
-})
+//   })
+// })
+
+// [header-menu  밑줄 이동: header menu] ============================================================================================
+let horizontalBar = document.getElementById('horizontal-underline')
+let horizontalMenus = document.querySelectorAll('.header-menu-list');
+
+horizontalMenus.forEach( (menu) => 
+  menu.addEventListener('click',(e)=> 
+    horizontalIndicator(e.currentTarget)
+    )
+)
+
+function horizontalIndicator(e){
+  horizontalBar.style.left = e.offsetLeft + 'px';
+  horizontalBar.style.width = e.offsetWidth + 'px';
+  horizontalBar.style.top = e.offsetTop + e.offsetHeight + 'px';
+  console.log(horizontalBar.style.left)
+}
+
 
 
 
@@ -147,7 +167,7 @@ headerMenuListEls.forEach(function(headerMenuListEl){
 // scrollMagic 라이브러리 사용
 var controller = new ScrollMagic.Controller(); //scrollMagic 라이브러리 컨트롤러 생성 -> 한번만 선언하면 된다.
 
-const panelEl = document.querySelector('.panel')
+const panelEl = document.querySelector('.panel');
 
 if(window.innerWidth > 768){
 
@@ -384,3 +404,21 @@ toTopEl.addEventListener('click',function(){
     scrollTo: 0
   })
 })
+
+
+
+var particles = Particles.init({
+  selector: ".background",
+  color: ["#03dac6", "#ff0266", "#000000"],
+  connectParticles: true,
+  responsive: [
+    {
+      breakpoint: 1000,
+      options: {
+        color: ["#faebd7", "#03dac6", "#ff0266"],
+        maxParticles: 100,
+        connectParticles: false
+      }
+    }
+  ]
+});

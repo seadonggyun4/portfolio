@@ -3,59 +3,55 @@
   width: 100%;
   height: 100vh;
   background-color: $title-bg-color;
+  // background-color: #F1ECE5;
 
   .title{
-    @include flexbox(center,center);
-    margin-bottom: 30px;
+    // @include flexbox(center,center);
+    font-family: 'Prata', serif;
+    margin-bottom: -200px;
     color: #fff;
-    font-size: 40px;
+    text-align: center;
+    font-size: 60px;
     font-weight: 400;
-    line-height: 40px;
+    line-height: 80px;
     opacity: 0;
     transform: translateY(30px);
     transition: all .2s ;
-
-    a{
-      height: 80px;
-      margin: 10px;
-      font-size: 6vw;
-      color: #fff;
-      border: 3px solid #fff;
-      transition: all .2s ;
-    }
+    z-index: $title-z-index;
   }
 
   p{
-    @include text-style(16);
-    color: #e5e5e5;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all .2s ;
+    @include pos-center-x;
+    bottom: -100px;
+    font-family: 'Prata', serif;
+    font-size: 250px;
+    color: #009bfc;
+    // color: #e5e5e5;
   }
+
+  
 
   @include responsive(T){
     .title{
-      font-size: 50px;
-
-      a{
-        height: 90px;
-      }
+      font-size: 90px;
+      line-height: 110px;
     }
 
     p{
-      @include text-style(18);
+      bottom: -150px;
+      font-size: 300px;
     }
   }
 
   @include responsive(D){
     .title{
-      font-size: 55px;
-      line-height: 50px;
+      font-size: 100px;
+      line-height: 150px;
+    }
 
-      a{
-        height: 100px;
-        font-size: 4.5vw;
-      }
+    p{
+      bottom: -200px;
+      font-size: 350px;
     }
   }
 }

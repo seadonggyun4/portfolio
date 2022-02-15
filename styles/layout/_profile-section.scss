@@ -3,6 +3,7 @@
   height: 1500px;
   width: 100%;
   background-color: $section-bg-color;
+  z-index: $profile-section-z-index;
 
   .about-title{
     position: absolute;
@@ -64,7 +65,9 @@
     }
 
     .about-text{
+      @include text-style(18);
       left: $profile-lg-left - 15px;
+      font-weight: 600;
     }
   }
 }

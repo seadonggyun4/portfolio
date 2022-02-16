@@ -391,8 +391,8 @@ container-size는 그리드시스템이 적용되는 범위
 @media screen and (min-width: 1200px) {
   .profile-section .about-title {
     right: 50px;
-    font-size: 3vw;
-    line-height: 80px;
+    font-size: 4vw;
+    line-height: 100px;
   }
   .profile-section .about-text {
     font-size: 18px;

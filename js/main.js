@@ -186,7 +186,7 @@ pEls.forEach(function(pEl){
   new ScrollMagic
       .Scene({
         triggerElement: pEl,// 애니메이션 시작 객체
-        triggerHook: .3, // trigger 위치
+        triggerHook: .5, // trigger 위치
         duration:90 //애니메이션 끝나는 위치 설정
       })
       .setClassToggle(pEl, 'change-color')
@@ -384,21 +384,3 @@ toTopEl.addEventListener('click',function(){
     scrollTo: 0
   })
 })
-
-
-
-var particles = Particles.init({
-  selector: ".background",
-  color: ["#03dac6", "#ff0266", "#000000"],
-  connectParticles: true,
-  responsive: [
-    {
-      breakpoint: 1000,
-      options: {
-        color: ["#faebd7", "#03dac6", "#ff0266"],
-        maxParticles: 100,
-        connectParticles: false
-      }
-    }
-  ]
-});

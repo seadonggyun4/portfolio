@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="Portfolio" />
   <meta property="og:title" content="DongGyun Portfolio site" />
   <meta property="og:description" content="DongGyun Portfolio site는 본인 프로필 소개를 위한 사이트입니다!,제 사이트에 방문한 여러분을 환영합니다. 👋" />
-  <meta property="og:image" content="/asset/img/Portfolio-seo.png" />
+  <meta property="og:image" content="/asset/img/portfolio-seo.png" />
   <meta property="og:url" content="#" />
 
   <!-- 트위터 카드 -->
@@ -20,7 +20,7 @@
   <meta property="twitter:site" content="Portfolio" />
   <meta property="twitter:title" content="DongGyun Portfolio site" />
   <meta property="twitter:description" content="DongGyun Portfolio site는 본인 프로필 소개를 위한 사이트입니다!,제 사이트에 방문한 여러분을 환영합니다. 👋" />
-  <meta property="twitter:image" content="/asset/img/Portfolio-seo.png" />
+  <meta property="twitter:image" content="/asset/img/portfolio-seo.png" />
   <meta property="twitter:url" content="#" />
 
   <!-- favicon -->
@@ -188,6 +188,10 @@
                           <h2 class="name">JQuery</h2>
                             <img src="./asset/img/skills/JQuery.png" alt="JQuery" class="icon" />
                         </div>
+                        <div class="box vue" style="--i:3">
+                          <h2 class="name">Vue</h2>
+                            <img src="./asset/img/skills/vue.png" alt="Vue" class="icon" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -196,23 +200,27 @@
                     <h2 class="skill-title">도구</h2>
                     <div class="skill-list">
                       <div class="skill-wrap">
-                        <div class="box figma" style="--i:1">
-                          <h2 class="name">Figma</h2>
-                          <img src="./asset/img/skills/figma.png" alt="Figma" class="icon" />
-                        </div>
-                        <div class="box vscode" style="--i:2">
+                        <div class="box vscode" style="--i:1">
                           <h2 class="name">VScode</h2>
                             <img src="./asset/img/skills/vscode.png" alt="vscode" class="icon" />
                         </div>
-                        <div class="box git" style="--i:3">
+                        <div class="box git" style="--i:2">
                           <h2 class="name">Git</h2>
                           <img src="./asset/img/skills/git.png" alt="git" class="icon" />
+                        </div>
+                        <div class="box babel" style="--i:3">
+                          <h2 class="name">Babel</h2>
+                          <img src="./asset/img/skills/babel.png" alt="Babel" class="icon" />
                         </div>
                       </div>
                       <div class="skill-wrap">
                         <div class="box webpack" style="--i:4">
-                          <h2 class="name">webpack</h2>
+                          <h2 class="name">Webpack</h2>
                           <img src="./asset/img/skills/webpack.png" alt="webpack" class="icon">
+                        </div>
+                        <div class="box jest" style="--i:5">
+                          <h2 class="name">Jest</h2>
+                          <img src="./asset/img/skills/jest.png" alt="Jest" class="icon">
                         </div>
                       </div>
                   </div>
@@ -234,28 +242,32 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-sm-4 col-md-6">
+          <!-- 오늘의집 -->
+          <div class="col-sm-4 col-md-4">
             <div class="imgBx tomorrow-house " style="--i:1">
-              <img src="./asset/img/project-img/tomorrow-house-logo.png" alt="">
+              <img src="./asset/img/project-img/tomorrow-house-logo.png" alt="tomorrow-house-logo">
             </div>  
             <div class="project-card " style="--i:1"> 
                 <span class="bg-effect tomorrow-house"></span>
                 <div class="content">
                   <h2>내일의집</h2>
-                  <p>Html ,SCSS, JS</p>
+                  <p>Html ,SCSS</p>
                   <br>
                   <p>
                     자취생 들의 필수어플 "오늘의 집" 의 상품판매 페이지의 UI 를 SCSS 를 활용해
                     크게는Layout 단위부터 componet 단위까지 자세하게 분석한뒤 만들었습니다.
                   </p>
                 </div>
-                <div class="project-btn btn-white"><a href="https://todayhouse.netlify.app/">자세히 보기</a></div>       
+                <div class="project-btn-group">
+                  <div class="project-btn btn-white"><a href="https://todayhouse.netlify.app/" target="_blank">사이트 가기</a></div>
+                  <div class="project-btn btn-white"><a href="https://github.com/seadonggyun4/TodayHouse-clone-project" target="_blank">GitHub 가기</a></div>       
+                </div>
             </div>
-        </div>
-
-          <div class="col-sm-4 col-md-6">
+           </div>
+          <!-- 스타벅스  -->
+          <div class="col-sm-4 col-md-4">
             <div class="imgBx starbucks " style="--i:2">
-              <img src="./asset/img/project-img/starbucks-logo.png" alt="">
+              <img src="./asset/img/project-img/starbucks-logo.png" alt="starbucks-logo">
             </div>
             <div class="project-card " style="--i:2">
                 <span class="bg-effect starbucks"></span>
@@ -268,10 +280,34 @@
                     ScrollMagic, Gsap 등의 라이브러리를 활용해 인터렉티브 하게 구현했습니다.
                   </p>
                 </div>
-                <div class="project-btn btn-white"><a href="https://starbucks-clone-project.netlify.app/">자세히 보기</a></div>
+                <div class="project-btn-group">
+                  <div class="project-btn btn-white"><a href="https://starbucks-clone-project.netlify.app/" target="_blank">사이트 가기</a></div>
+                  <div class="project-btn btn-white"><a href="https://github.com/seadonggyun4/Starbucks/" target="_blank">GitHub 가기</a></div>
+                </div>
             </div>
           </div>
-
+          <!-- MovieCart -->
+          <div class="col-sm-4 col-md-4">
+            <div class="imgBx moviecart " style="--i:3">
+              <img src="./asset/img/project-img/moviecart-logo.png" alt="moviecart-logo">
+            </div>
+            <div class="project-card " style="--i:3">
+                <span class="bg-effect moviecart"></span>
+                <div class="content">
+                  <h2>MovieCart</h2>
+                  <p>Vue, Vuex, Webpack</p>
+                  <br>
+                  <p>
+                    OMDB API 를 통해 영화검색을 할수 있는 간단한 사이트 입니다.
+                    영화 데이터 상태관리는 Vuex를 통해 movie, about 두개의 데이터 모듈로 나눠 관리하고 있습니다.
+                  </p>
+                </div>
+                <div class="project-btn-group">
+                  <div class="project-btn btn-white"><a href="https://moviecart.netlify.app/#/" target="_blank">사이트 가기</a></div>
+                  <div class="project-btn btn-white"><a href="https://github.com/seadonggyun4/MovieCart" target="_blank">GitHub 가기</a></div>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

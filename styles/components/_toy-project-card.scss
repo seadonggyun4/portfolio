@@ -32,6 +32,10 @@
     &.starbucks{
       background: #ffbbc3;
     }
+
+    &.moviecart{
+      background-color: #3EAF7C;
+    }
   }
 
   .content{
@@ -51,17 +55,23 @@
     }
   }
 
-  .project-btn{
+  .project-btn-group{
     @include pos-center-x;
+    @include flexbox(around,center);
     margin-top: 20px;
+    width: 100%;
     visibility: hidden;
     opacity: 0;
     transition: opacity .9s ease-in-out;
     z-index: $project-btn-z-index;
 
-    a{
-      color: #fff;
+    .project-btn{
+      flex-shrink: 0;
+      a{
+        color: #fff;
+      }
     }
+
   }
 
 
@@ -79,7 +89,7 @@
       opacity: 1;
     }
 
-    .project-btn{
+    .project-btn-group{
       opacity: 1;
       visibility: visible;
     }

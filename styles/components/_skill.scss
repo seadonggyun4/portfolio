@@ -169,9 +169,9 @@
       .box.jquery::before{
         background-color: #0268AE;
       }
-    
-      .box.figma::before{
-        background-color: #FF7262;
+
+      .box.vue::before{
+        background-color: #3EAF7C;
       }
     
       .box.vscode::before{
@@ -182,8 +182,16 @@
         background-color: #EBE6E1;
       }
 
+      .box.babel::before{
+        background-color: #F1D53D;
+      }
+
       .box.webpack::before{
         background-color: #33A8F2;
+      }
+
+      .box.jest::before{
+        background-color: #99425B;
       }
     }
   

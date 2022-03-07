@@ -405,7 +405,7 @@ container-size는 그리드시스템이 적용되는 범위
 
 .tech-section {
   position: relative;
-  padding-top: 100px;
+  padding: 250px;
   font-family: "Dongle", sans-serif;
   background: #fff;
 }
@@ -446,11 +446,14 @@ container-size는 그리드시스템이 적용되는 범위
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 1300px;
+  padding: 200px 0 200px;
   width: 100%;
   background-color: #FAFAFA;
 }
 .toy-project-section .imgBx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   top: 130px;
   left: 50%;
@@ -467,7 +470,6 @@ container-size는 그리드시스템이 적용되는 범위
 }
 .toy-project-section .imgBx img {
   width: 100%;
-  height: 100%;
   border-radius: 50%;
 }
 .toy-project-section .imgBx.fade-in {
@@ -479,6 +481,9 @@ container-size는 그리드시스템이 적용되는 범위
 }
 .toy-project-section .imgBx.starbucks {
   background-color: #D59F9F;
+}
+.toy-project-section .imgBx.moviecart {
+  background-color: #3EAF7C;
 }
 
 .footer {
@@ -856,8 +861,8 @@ container-size는 그리드시스템이 적용되는 범위
 .skill .skill-list .skill-wrap .box.jquery::before {
   background-color: #0268AE;
 }
-.skill .skill-list .skill-wrap .box.figma::before {
-  background-color: #FF7262;
+.skill .skill-list .skill-wrap .box.vue::before {
+  background-color: #3EAF7C;
 }
 .skill .skill-list .skill-wrap .box.vscode::before {
   background-color: #33A8F2;
@@ -865,8 +870,14 @@ container-size는 그리드시스템이 적용되는 범위
 .skill .skill-list .skill-wrap .box.git::before {
   background-color: #EBE6E1;
 }
+.skill .skill-list .skill-wrap .box.babel::before {
+  background-color: #F1D53D;
+}
 .skill .skill-list .skill-wrap .box.webpack::before {
   background-color: #33A8F2;
+}
+.skill .skill-list .skill-wrap .box.jest::before {
+  background-color: #99425B;
 }
 @media screen and (min-width: 768px) {
   .skill .skill-list {
@@ -950,6 +961,9 @@ container-size는 그리드시스템이 적용되는 범위
 .project-card .bg-effect.starbucks {
   background: #ffbbc3;
 }
+.project-card .bg-effect.moviecart {
+  background-color: #3EAF7C;
+}
 .project-card .content {
   position: relative;
   margin-top: -140px;
@@ -967,17 +981,24 @@ container-size는 그리드시스템이 적용되는 범위
   letter-spacing: -0.01em;
   margin-bottom: 15px;
 }
-.project-card .project-btn {
+.project-card .project-btn-group {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin-top: 20px;
+  width: 100%;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.9s ease-in-out;
   z-index: 1;
 }
-.project-card .project-btn a {
+.project-card .project-btn-group .project-btn {
+  flex-shrink: 0;
+}
+.project-card .project-btn-group .project-btn a {
   color: #fff;
 }
 .project-card:hover, .project-card:active, .project-card:focus {
@@ -992,7 +1013,7 @@ container-size는 그리드시스템이 적용되는 범위
   visibility: visible;
   opacity: 1;
 }
-.project-card:hover .project-btn, .project-card:active .project-btn, .project-card:focus .project-btn {
+.project-card:hover .project-btn-group, .project-card:active .project-btn-group, .project-card:focus .project-btn-group {
   opacity: 1;
   visibility: visible;
 }

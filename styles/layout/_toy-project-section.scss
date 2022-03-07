@@ -1,12 +1,14 @@
 .toy-project-section{
   @include flexbox-column(center,center);
   position: relative;
-  height: 1300px;
+  padding: 200px 0 200px;
+  // height: 1300px;
   width: 100%;
   background-color: $section-bg-color; 
 
 
   .imgBx{
+    @include flexbox(center,center);
     position: relative;
     top: 130px;
     left: 50%;
@@ -23,7 +25,6 @@
 
     img{
       width: 100%;
-      height: 100%;
       border-radius: 50%;
     }
 
@@ -38,6 +39,10 @@
 
     &.starbucks{
       background-color: #D59F9F;
+    }
+
+    &.moviecart{
+      background-color: #3EAF7C;
     }
   }
 

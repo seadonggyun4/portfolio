@@ -57,7 +57,7 @@
 
   .project-btn-group{
     @include pos-center-x;
-    @include flexbox(around,center);
+    display: none;
     margin-top: 20px;
     width: 100%;
     visibility: hidden;
@@ -90,6 +90,7 @@
     }
 
     .project-btn-group{
+      @include flexbox(around,center);
       opacity: 1;
       visibility: visible;
     }

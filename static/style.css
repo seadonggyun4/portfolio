@@ -988,9 +988,7 @@ container-size는 그리드시스템이 적용되는 범위
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: none;
   margin-top: 20px;
   width: 100%;
   visibility: hidden;
@@ -1017,6 +1015,9 @@ container-size는 그리드시스템이 적용되는 범위
   opacity: 1;
 }
 .project-card:hover .project-btn-group, .project-card:active .project-btn-group, .project-card:focus .project-btn-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   opacity: 1;
   visibility: visible;
 }

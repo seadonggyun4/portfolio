@@ -1,6 +1,6 @@
 .profile-section{
   position: relative;
-  height: 1500px;
+  height: 1800px;
   width: 100%;
   background-color: $section-bg-color;
   z-index: $profile-section-z-index;
@@ -57,6 +57,7 @@
   }
 
   @include responsive(D){
+    height: 1600px;
 
     .about-title{
       right: $profile-lg-right;

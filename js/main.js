@@ -171,6 +171,7 @@ fadeEls.forEach(function(fadeEl, index){
   gsap.to(fadeEl, 1, {
     y:0,
     opacity:1,
+    filter: "blur(0px)",
     // 0.7 -> 1.4 -> 2.1 -> 2.7
     delay: (index + 1) * .7
   });

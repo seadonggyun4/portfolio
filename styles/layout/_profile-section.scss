@@ -48,7 +48,7 @@
   @include responsive(T){
 
     .about-title{
-      font-size: 3.8vw;
+      font-size: 3.5vw;
     }    
 
     .about-text{
@@ -61,7 +61,6 @@
 
     .about-title{
       right: $profile-lg-right;
-      font-size: 4vw;
       line-height: 100px;
     }
 

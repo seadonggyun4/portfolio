@@ -439,7 +439,7 @@ container-size는 그리드시스템이 적용되는 범위
 }
 @media screen and (min-width: 1200px) {
   .tech-section .tech-skill .skill {
-    margin-bottom: 150px;
+    margin-bottom: 450px;
   }
 }
 
@@ -724,6 +724,7 @@ container-size는 그리드시스템이 적용되는 범위
   font-size: 30px;
   line-height: 44px;
   letter-spacing: -0.01em;
+  font-size: 35px;
   margin-bottom: 25px;
   font-weight: 500;
   border-bottom: 3px solid #5e96ff;
@@ -743,7 +744,7 @@ container-size는 그리드시스템이 적용되는 범위
   align-items: center;
   /* ==================== [card box design]  ==================== */
   /* ==================== [card box flip animation]  ==================== */
-  /* ==================== [card Icon design]  ==================== */
+  /* ============================= [card Icon design]  ============================= */
 }
 .skill .skill-list .skill-wrap .box {
   position: relative;
@@ -866,6 +867,18 @@ container-size는 그리드시스템이 적용되는 범위
 }
 .skill .skill-list .skill-wrap .box.vue::before {
   background-color: #3EAF7C;
+}
+.skill .skill-list .skill-wrap .box.pug::before {
+  background-color: #FCD6A0;
+}
+.skill .skill-list .skill-wrap .box.nodejs::before {
+  background-color: #90C53F;
+}
+.skill .skill-list .skill-wrap .box.socketio::before {
+  background-color: #020202;
+}
+.skill .skill-list .skill-wrap .box.webrtc::before {
+  background-color: #0089CC;
 }
 .skill .skill-list .skill-wrap .box.vscode::before {
   background-color: #33A8F2;

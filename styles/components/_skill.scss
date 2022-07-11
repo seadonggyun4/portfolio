@@ -169,10 +169,6 @@
         background-color: #FFCA28;
       }
     
-      .box.ts::before{
-        background-color: #317AC7;
-      }
-    
       .box.sass::before{
         background-color: #D56EA3;
       }
@@ -198,20 +194,8 @@
       .box.nodejs::before{
         background-color: #90C53F;
       }
-
-      .box.socketio::before{
-        background-color: #020202;
-      }
-
-      .box.webrtc::before{
-        background-color: #0089CC;
-      }
     
       // 도구
-      .box.vscode::before{
-        background-color: #33A8F2;
-      }
-    
       .box.git::before{
         background-color: #EBE6E1;
       }

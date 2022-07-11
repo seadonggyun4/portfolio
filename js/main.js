@@ -164,18 +164,11 @@ if(window.innerWidth > 768){
 
 // [title-section tilte 나타남 효과(fade-in) : title-section] ============================================================================================
 // gsap 라이브러리 사용
-const fadeEls = document.querySelectorAll('.title-section .fade-in');
+const fadeEls = document.querySelector('.title-section .fade-in');
+console.log(fadeEls)
 
-fadeEls.forEach(function(fadeEl, index){
-  //gsap.to(적용요소, 지속시간, 스타일옵션)
-  gsap.to(fadeEl, 1, {
-    y:0,
-    opacity:1,
-    filter: "blur(0px)",
-    // 0.7 -> 1.4 -> 2.1 -> 2.7
-    delay: (index + 1) * .7
-  });
-});
+fadeEls.classList.add('active')
+
 
 // [profile about-title 색 변환 효과 : profile-section] ============================================================================================
 // scrollMagic 라이브러리 사용

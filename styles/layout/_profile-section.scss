@@ -21,8 +21,8 @@
     }
 
     .change-color{
-      color: $border-color;
-      -webkit-text-stroke: 1px $border-color;
+      color: $title-bg-color;
+      -webkit-text-stroke: 1px $title-bg-color;
     }
   }
   .about-text{

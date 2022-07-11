@@ -14,11 +14,25 @@
     font-size: 50px;
     font-weight: 400;
     line-height: 80px;
-    opacity: 0;
-    filter: blur(30px);
-    transform: translateY(30px);
-    transition: all .2s ;
+    transform: translateY(100px);
+    transition: all 1s ;
     z-index: $title-z-index;
+
+    span{
+      opacity: 0;
+      filter: blur(50px);
+      transition: all 1.5s ;
+      transition-delay: calc(var(--i) * 0.1s) ;
+    }
+
+    //Title-active
+    &.active{
+      transform: translateY(0);
+      span{
+        opacity: 1;
+        filter: blur(0);  
+      }
+    }
   }
 
   p{

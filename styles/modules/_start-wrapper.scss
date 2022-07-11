@@ -13,9 +13,9 @@
     } 
 
     
-    $shadows-small:  multiple-box-shadow(700);
+    $shadows-small:  multiple-box-shadow(300);
     $shadows-medium: multiple-box-shadow(200);
-    $shadows-big:    multiple-box-shadow(100);
+    // $shadows-big:    multiple-box-shadow(100);
 
 
 
@@ -62,25 +62,25 @@
 
 
 
-    .stars3{
-        width: 3px;
-        height: 3px;
-        border-radius:50%;
-        background: transparent;
-        box-shadow: $shadows-big;
-        animation: animStar 150s linear infinite;
+    // .stars3{
+    //     width: 3px;
+    //     height: 3px;
+    //     border-radius:50%;
+    //     background: transparent;
+    //     box-shadow: $shadows-big;
+    //     animation: animStar 150s linear infinite;
 
 
-        &:after{
-            content: " ";
-            position: absolute;
-            top: 2000px;
-            width: 3px;
-            height: 3px;
-            background: transparent;
-            box-shadow: $shadows-big;
-        }
-    }
+    //     &:after{
+    //         content: " ";
+    //         position: absolute;
+    //         top: 2000px;
+    //         width: 3px;
+    //         height: 3px;
+    //         background: transparent;
+    //         box-shadow: $shadows-big;
+    //     }
+    // }
 
 
 

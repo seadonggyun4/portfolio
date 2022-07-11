@@ -743,6 +743,7 @@ container-size는 그리드시스템이 적용되는 범위
   justify-content: center;
   align-items: center;
   /* ==================== [card box design]  ==================== */
+  /* ==================== [skill-wrap left || right]  ==================== */
   /* ==================== [card box flip animation]  ==================== */
   /* ============================= [card Icon design]  ============================= */
 }
@@ -756,9 +757,8 @@ container-size는 그리드시스템이 적용되는 범위
   background: #232323;
   border-radius: 20px;
   overflow: hidden;
-  transform: rotateY(180deg);
   transform-style: preserve-3d;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.7s ease-in-out;
   transition-delay: calc(var(--i) * 0.1s);
   cursor: pointer;
   /* ===== circle content ===== */
@@ -815,7 +815,7 @@ container-size는 그리드시스템이 적용되는 범위
   max-width: 70px;
   transform-style: preserve-3d;
   transform: translate3d(-50%, -50%, 0px) rotate(-15deg);
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
   opacity: 0;
 }
 .skill .skill-list .skill-wrap .box:active, .skill .skill-list .skill-wrap .box:focus {
@@ -823,24 +823,30 @@ container-size는 그리드시스템이 적용되는 범위
   box-shadow: none;
   -webkit-tap-highlight-color: transparent;
 }
-.skill .skill-list .skill-wrap .box.flip {
-  transform: rotateY(0);
+.skill .skill-list .skill-wrap.left .box {
+  transform: translateX(-1000px) rotate(-720deg);
+}
+.skill .skill-list .skill-wrap.right .box {
+  transform: translateX(1000px) rotate(720deg);
+}
+.skill .skill-list .skill-wrap .box.active {
+  transform: translateX(0) rotate(0deg);
   /* ===== box,flip:hover ===== */
 }
-.skill .skill-list .skill-wrap .box.flip::before {
+.skill .skill-list .skill-wrap .box.active::before {
   opacity: 0.8;
 }
-.skill .skill-list .skill-wrap .box.flip .icon {
+.skill .skill-list .skill-wrap .box.active .icon {
   opacity: 1;
 }
-.skill .skill-list .skill-wrap .box.flip:hover::before {
+.skill .skill-list .skill-wrap .box.active:hover::before {
   clip-path: circle(150px at 80% -20%);
 }
-.skill .skill-list .skill-wrap .box.flip:hover .name {
+.skill .skill-list .skill-wrap .box.active:hover .name {
   bottom: 30px;
   opacity: 1;
 }
-.skill .skill-list .skill-wrap .box.flip:hover .icon {
+.skill .skill-list .skill-wrap .box.active:hover .icon {
   top: 50%;
   transform: translate3d(-50%, -50%, 50px) rotate(-15deg);
 }

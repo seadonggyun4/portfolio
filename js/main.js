@@ -231,7 +231,7 @@ boxEls.forEach(function(boxEl){
         triggerHook: .6, // trigger 위치
         reverse:false //애니메이션 한번만실행
       })
-      .setClassToggle(boxEl,'flip') // 클래스 이름 토글
+      .setClassToggle(boxEl,'active') // 클래스 이름 토글
       .addTo(controller);
 });
 

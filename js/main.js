@@ -165,9 +165,20 @@ if(window.innerWidth > 768){
 // [title-section tilte 나타남 효과(fade-in) : title-section] ============================================================================================
 // gsap 라이브러리 사용
 const fadeEls = document.querySelector('.title-section .fade-in');
-console.log(fadeEls)
 
 fadeEls.classList.add('active')
+
+// [profile photo  효과 : profile-section] ============================================================================================
+const profile = document.querySelector('.profile')
+
+new ScrollMagic
+  .Scene({
+    triggerElement: profile,// 애니메이션 시작 객체
+    triggerHook: .5, // trigger 위치
+    reverse: false,//애니메이션 한번만실행
+  })
+  .setClassToggle(profile, 'active')
+  .addTo(controller)
 
 
 // [profile about-title 색 변환 효과 : profile-section] ============================================================================================

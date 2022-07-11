@@ -2,6 +2,10 @@
   @include pos-center-x;
   top: 80px;
 
+  opacity: 0;
+  transform: translate3d(-50%, 100px, 0);
+  transition: 1s ease-in-out;
+
   .profile-photo{
     position: relative;
     height: 300px;
@@ -10,15 +14,19 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+
     &::after{
       content: '';
       position: absolute;
-      top: -15px;
-      left: -15px;
+      top: -20px;
+      left: -20px;
       display: block;
       height: 300px;
       width: 300px;
       border: 2px solid #ffd755;
+      transform: translate3d(20px, 20px, 0);
+      transition: .8s ease-in-out;
+      transition-delay: .3s;
     }
   }
 
@@ -34,10 +42,20 @@
       color: #7e7678;
     }
   }
+  
+  //profile-active
+  &.active{
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
+
+    .profile-photo::after{
+      transform: translate3d(0,0,0)
+    }
+  }
 
   @include responsive(T){
     left: $profile-sm-left;
-    transform: translateX(0);
+    transform: translate3d(0, 100px, 0);
 
     .profile-photo{
       height: 320px;
@@ -47,6 +65,10 @@
         height: 320px;
         width: 320px;
       }
+    }
+
+    &.active{
+      transform: translate3d(0, 0, 0);
     }
   }
 

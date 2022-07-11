@@ -244,7 +244,7 @@ boxEls.forEach(function(boxEl){
 // 틸트.js 라이브러리 사용
 boxEls.forEach(function(boxEl){
   boxEl.addEventListener("mouseenter", function(){
-    VanillaTilt.init(document.querySelectorAll(".box.flip"), {
+    VanillaTilt.init(document.querySelectorAll(".box.active"), {
       max: 45, //최대 휘어짐
       speed: 400, // 값이 낮을수록 더 빠르게 변한다.
     });
@@ -361,6 +361,19 @@ projectCardEls.forEach(function(projectCardEl){
       .setClassToggle(projectCardEl, 'fade-in')
       .addTo(controller)
 })
+
+
+// [틸트 for footer-tag: footer] ============================================================================================
+// 틸트.js 라이브러리 사용
+
+
+VanillaTilt.init(document.querySelectorAll(".footer-tag"), {
+  max: 20, //최대 휘어짐
+  speed: 400, // 값이 낮을수록 더 빠르게 변한다.
+});
+    
+
+
 
 
 

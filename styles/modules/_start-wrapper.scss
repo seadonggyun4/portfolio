@@ -5,9 +5,9 @@
 
     //랜덤한 별 생성 함수
     @function multiple-box-shadow ($n){
-        $value: '#{random(2000)}px #{random(20000)}px #fff';
+        $value: '#{random(2000)}px #{random(20000)}px #FAFAFA';
         @for $i from 2 through $n{
-            $value: '#{$value} , #{random(2000)}px #{random(2000)}px #fff';
+            $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FAFAFA';
         }
         @return unquote($value)
     } 

@@ -34,10 +34,20 @@
     }
   }
 
-  p{
-    @include text-style(12);
-    color: #78767b; 
+  .footer-tag{
+    height:60px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: transparent;
+    transform-style: preserve-3d;
+
+    p{
+      @include text-style(12);
+      transform: translate3d(0, 0, 15px);
+      transform-style: preserve-3d;
+      color: #fff; 
+    }
   }
+
 
   @include responsive(T){
     .footer-title{
@@ -48,9 +58,12 @@
       font-size: 50px
     }
 
-    p{
-      @include text-style(14);
+    .footer-tag{
+      p{
+        @include text-style(14);
+      }
     }
+
   }
 
 
@@ -64,9 +77,12 @@
       font-size: 65px;
     }
 
-    p{
-      @include text-style(16);
+    .footer-tag{
+      p{
+        @include text-style(16);
+      }
     }
+
   }
 }
 

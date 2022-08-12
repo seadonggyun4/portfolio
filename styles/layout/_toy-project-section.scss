@@ -1,10 +1,12 @@
 .toy-project-section{
   @include flexbox-column(center,center);
   position: relative;
-  padding: 200px 0 200px;
+  // padding: 200px 0 200px;
   // height: 1300px;
   width: 100%;
-  background-color: $section-bg-color; 
+  // background-color: $section-bg-color; 
+  background: linear-gradient(#fff 0%, $svg-color 90%);
+
 
 
   .imgBx{
@@ -15,7 +17,7 @@
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    background-color: beige;
+    background-color: #ffcd93;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     transition: all .5s ease-in-out;
     transition-delay: calc(var(--i) * 0.2s);
@@ -28,25 +30,33 @@
       border-radius: 50%;
     }
 
+    p{
+      font-size: 30px;
+      font-weight: 700;
+      color: $section-bg-color;
+    }
+
     &.fade-in{
       transform: translateX(-50%) translateY(-100px);
       opacity: 1;
-    }
-
-    &.tomorrow-house{
-      background-color: #208bd9;
     }
 
     &.starbucks{
       background-color: #D59F9F;
     }
 
+    &.tomorrow-house{
+      background-color: #208bd9;
+    }
+
     &.moviecart{
       background-color: #3EAF7C;
     }
+
+    &.closca-shop{
+      background: rgb(97,218,251);
+    }
   }
-
-
 }
 
 

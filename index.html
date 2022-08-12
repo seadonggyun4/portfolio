@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">  <!-- 가로 스크롤 막기 -->
   <title>i'm DongGyun</title>
 
 
@@ -43,9 +44,13 @@
   <!-- lodash 라이브러리 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
-  <!-- gsap & scroll to plugin 라이브러리 -->
+  <!-- gsap & ScrollTrigger & MotionPathPlugin 라이브러리 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js" integrity="sha512-gWlyRVDsJvp5kesJt4cSdPPLZIBdln/uSwzYgUicQcbTgRNQE4QhP5KUBIYlLYLkiKIQiuD7KUMHzqGNW/D2bQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js" integrity="sha512-agNfXmEo6F+qcj3WGryaRvl9X9wLMQORbTt5ACS9YVqzKDMzhRxY+xjgO45HCLm61OwHWR1Oblp4QSw/SGh9SA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+  <script src='https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js'></script>
+  <!-- DrawSVGPlugin 은 비즈니스 용 -->
+  <!-- <script src='https://assets.codepen.io/16327/DrawSVGPlugin3.min.js'></script>  -->
+
 
   <!-- ScrollMagic -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -56,304 +61,376 @@
   <!-- jquery-3 -->
   <script src="./asset/lib/jquery-3.6.0.min.js"></script>
 
-  
-
   <!-- style sheet -->
   <link rel="stylesheet" href="./style.css">
-  <!-- <link rel="stylesheet" href="./dist/style.css"> -->
   </head>
 <body>
-  <!-- ======================================== header ======================================== -->
-  <header>
-    <section class="header">
-      <h1 class="header-title"><a href="#">Donggyun's Portfolio</a></h1>
-      <button class="header-button btn"><a href="#">Seo</a></button>
-      <ul class="header-menu">
-        <div id="horizontal-underline" aria-hidden="true"></div>
-        <li class="header-menu-list btn-ghost"><a href="#profile">profile</a></li>
-        <li class="header-menu-list btn-ghost"><a href="#tech-skill">tech-skill</a> </li>
-        <li class="header-menu-list btn-ghost"><a href="#toy-project">toy-project</a> </li>
-      </ul>
-    </section>
-  </header>
-  <!-- ======================================== main ======================================== -->
-  <main>
-    <!-- ========== 타이틀 section ========== -->
-    <section class="title-section panel">
-      <h1 class="title fade-in"> 
-        <span style="--i:1">welcome</span> <span style="--i:4">to</span>  <span style="--i:2">the</span> <br> 
-        <span style="--i:3">portfolio</span><br> 
-        <span style="--i:6">of</span> <span style="--i:5">DongGyun</span> 
-      </h1>
+  <div id="wrap">
+    <!-- ======================================== header ======================================== -->
+    <header>
+      <section class="header">
+        <h1 class="header-title"><a href="#">Donggyun's Portfolio</a></h1>
+        <button class="header-button btn"><a href="#">Seo</a></button>
+        <ul class="header-menu">
+          <div id="horizontal-underline" aria-hidden="true"></div>
+          <li class="header-menu-list btn-ghost"><a href="#profile">profile</a></li>
+          <li class="header-menu-list btn-ghost"><a href="#tech-skill">tech-skill</a> </li>
+          <li class="header-menu-list btn-ghost"><a href="#toy-project">toy-project</a> </li>
+        </ul>
+      </section>
+    </header>
+    <!-- ======================================== main ======================================== -->
+    <main>
+
+      <!-- ========== 타이틀 section ========== -->
+      <section class="title-section panel">
+        <h1 class="title fade-in"> 
+          <span style="--i:1">welcome</span> <span style="--i:4">to</span>  <span style="--i:2">the</span> <br> 
+          <span style="--i:3">portfolio</span><br> 
+          <span style="--i:6">of</span> <span style="--i:5">DongGyun</span> 
+        </h1>
+        
+        <p class="title-bg">Me</p>
+  
+        <!-- startWrapper -->
+        <!-- <div class="starWrapper">
+          <div class="stars1"></div>
+          <div class="stars2"></div>
+          <div class="stars3"></div>
+        </div> -->
+  
+        <div id="TitleCanvas">
+          <canvas></canvas>
+        </div>
+      </section>
+  
+      <!-- ========== 프로필 section ========== -->
+      <section class="profile-section" id="profile">
+        <h1 class="visually-hidden">profile-section</h1>
+        <div class="profile">
+          <div class="profile-photo">
+          </div>
+          <div class="profile-info">
+            <h2>DongGyun</h2>
+            <p>@서동균</p>
+          </div>
+        </div>
+        <div class="about-title">
+          <p>안녕하세요!</p> 
+          <p>저는 견고하고 재사용성 높은</p>
+          <p>컴포넌트 단위의 UI를 만드는</p>
+          <p><span>UI Developer</span>입니다.</p>
+        </div>
+        <div class="about-text">
+  
+          <p class="text">
+            저는 UI 개발자 지망생 서동균 입니다.<br>
+            쉽고, 재밌고, 남다르게 표현하는걸 좋아합니다.<br>
+            <br>
+            <br>
+            탄탄한 코드위에 감각적인 UI를 설계합니다. CSS와 JavaScript를 활용한 인터렉티브한 모션을 좋아하고,<br>
+            컴포넌트 단위의 유지보수에 최적화된 구성에 관심이 많습니다.<br>
+            <br>
+            반복되는 다양한 화면상의 컴포넌트들을 스크립트를 이용해서 함수처럼 상황에 맞게 다양한 옵션값을 넣어<br>
+            가상의 DOM으로 출력해주는 모듈을 만들어서 비슷비슷한 화면상의 UI들을 <br>
+            하나의 모듈로 계속해서 재생성 하는 형식으로 말이죠<br>
+            <br>
+            <br>
+          </p>
+  
+          <p class="text">
+            저는 UI Development 분야를 좋아합니다. 좋아하니깐 즐기게 되고, 더 잘하고 싶어집니다.<br>
+            잘하고 싶은 욕심이 생기면 그곳에 저만의 특별한 무언가가 담기게 되는것 같습니다.<br>
+            목표를 향해 성큼성큼 나아가는 의지, 끊임없이 솟아오르는 영감.<br>
+            모두 제가 가진 저만의 특별함 입니다 :)<br>
+            <br>
+            <br>
+            좋아하는 일을 즐기면서 잘하는 것,<br>
+            제가 꿈꾸는 저의 모습입니다.<br>
+          </p>
+  
+        </div>
+      </section>
+
       
-      <p class="title-bg">Me</p>
-
-      <!-- startWrapper -->
-      <div class="starWrapper">
-        <div class="stars1"></div>
-        <div class="stars2"></div>
-        <div class="stars3"></div>
-      </div>
-    </section>
-
-    <!-- ========== 프로필 section ========== -->
-    <section class="profile-section" id="profile">
-      <h1 class="visually-hidden">profile-section</h1>
-      <div class="profile">
-        <div class="profile-photo">
-        </div>
-        <div class="profile-info">
-          <h2>DongGyun</h2>
-          <p>@서동균</p>
-        </div>
-      </div>
-      <div class="about-title">
-        <p>안녕하세요!</p> 
-        <p>저는 견고하고 재사용성 높은</p>
-        <p>컴포넌트 단위의 UI를 만드는</p>
-        <p><span>UI Developer</span>입니다.</p>
-      </div>
-      <div class="about-text">
-
-        <p class="text">
-          저는 UI 개발자 지망생 서동균 입니다.<br>
-          쉽고, 재밌고, 남다르게 표현하는걸 좋아합니다.<br>
-          <br>
-          <br>
-          탄탄한 코드위에 감각적인 UI를 설계합니다. CSS와 JavaScript를 활용한 인터렉티브한 모션을 좋아하고,<br>
-          컴포넌트 단위의 유지보수에 최적화된 구성에 관심이 많습니다.<br>
-          <br>
-          반복되는 다양한 화면상의 컴포넌트들을 스크립트를 이용해서 함수처럼 상황에 맞게 다양한 옵션값을 넣어<br>
-          가상의 DOM으로 출력해주는 모듈을 만들어서 비슷비슷한 화면상의 UI들을 <br>
-          하나의 모듈로 계속해서 재생성 하는 형식으로 말이죠<br>
-          <br>
-          <br>
-        </p>
-
-        <p class="text">
-          저는 UI Development 분야를 좋아합니다. 좋아하니깐 즐기게 되고, 더 잘하고 싶어집니다.<br>
-          잘하고 싶은 욕심이 생기면 그곳에 저만의 특별한 무언가가 담기게 되는것 같습니다.<br>
-          목표를 향해 성큼성큼 나아가는 의지, 끊임없이 솟아오르는 영감.<br>
-          모두 제가 가진 저만의 특별함 입니다 :)<br>
-          <br>
-          <br>
-          좋아하는 일을 즐기면서 잘하는 것,<br>
-          제가 꿈꾸는 저의 모습입니다.<br>
-        </p>
-
-      </div>
-    </section>
-
-    <!-- ========== 기술 section ========== -->
-    <section class="tech-section" id="tech-skill" aria-label="사용할수 있는 기술들의 리스트">
-      <h1 class="visually-hidden">tech skills section</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <!-- tech-skill -->
-            <div class="tech-skill">
-                  <!-- language -->
-                  <div class="skill language">
-                    <h2 class="skill-title">언어</h2>
-                    <div class="skill-list">
-                      <div class="skill-wrap left">
-                        <div class="box html" style="--i:1">
-                          <h2 class="name">HTML</h2>
-                          <img src="./asset/img/skills/html.png" alt="HTML" class="icon" />
-                        </div>
-                        <div class="box css" style="--i:2">
-                          <h2 class="name">CSS</h2>
-                            <img src="./asset/img/skills/css.png" alt="Css" class="icon" />
-                        </div>
-                        <div class="box js" style="--i:3">
-                          <h2 class="name">JavaScript</h2>
-                          <img src="./asset/img/skills/js.png" alt="JavaScript" class="icon" />
+      <div class="svg-container">
+        <!-- ========== 기술 section ========== -->
+        <section class="tech-section" id="tech-skill" aria-label="사용할수 있는 기술들의 리스트">
+          <h1 class="visually-hidden">tech skills section</h1>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <!-- tech-skill -->
+                <div class="tech-skill">
+                      <!-- language -->
+                      <div class="skill language">
+                        <h2 class="skill-title">언어</h2>
+                        <div class="skill-list">
+                          <div class="skill-wrap left">
+                            <div class="box html" style="--i:1">
+                              <h2 class="name">HTML</h2>
+                              <img src="./asset/img/skills/html.png" alt="HTML" class="icon" />
+                            </div>
+                            <div class="box css" style="--i:2">
+                              <h2 class="name">CSS</h2>
+                                <img src="./asset/img/skills/css.png" alt="Css" class="icon" />
+                            </div>
+                            <div class="box js" style="--i:3">
+                              <h2 class="name">JavaScript</h2>
+                              <img src="./asset/img/skills/js.png" alt="JavaScript" class="icon" />
+                            </div>
+                          </div>
+                          <div class="skill-wrap left">
+                            <div class="box sass" style="--i:4">
+                              <h2 class="name">Sass</h2>
+                              <img src="./asset/img/skills/sass.png" alt="Sass" class="icon" />
+                            </div>
+                            <div class="box pug" style="--i:5">
+                              <h2 class="name">Pug</h2>
+                              <img src="./asset/img/skills/pug.png" alt="Pug" class="icon" />
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="skill-wrap left">
-                        <div class="box sass" style="--i:4">
-                          <h2 class="name">Sass</h2>
-                          <img src="./asset/img/skills/sass.png" alt="Sass" class="icon" />
+                      <!-- front-end -->
+                      <div class="skill front-end">
+                        <h2 class="skill-title"> 프론트 엔드</h2>
+                        <div class="skill-list">
+                          <div class="skill-wrap right">
+                            <div class="box bootstrap" style="--i:1">
+                              <h2 class="name">Bootstrap</h2>
+                              <img src="./asset/img/skills/Bootstrap.png" alt="Bootstrap" class="icon" />
+                            </div>
+                            <div class="box jquery" style="--i:2">
+                              <h2 class="name">JQuery</h2>
+                                <img src="./asset/img/skills/JQuery.png" alt="JQuery" class="icon" />
+                            </div>
+                            <div class="box vue" style="--i:3">
+                              <h2 class="name">Vue</h2>
+                                <img src="./asset/img/skills/vue.png" alt="Vue" class="icon" />
+                            </div>
+                          </div>
+                          <div class="skill-wrap right">
+                            <div class="box vue" style="--i:4">
+                              <h2 class="name">VueX</h2>
+                                <img src="./asset/img/skills/VueX.png" alt="Vue" class="icon" />
+                            </div>
+                            <div class="box react" style="--i:5">
+                              <h2 class="name">React</h2>
+                                <img src="./asset/img/skills/react.png" alt="Vue" class="icon" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="skill-list">
+                          <div class="skill-wrap right">
+                            <div class="box redux" style="--i:6">
+                              <h2 class="name">Redux</h2>
+                                <img src="./asset/img/skills/redux.png" alt="Vue" class="icon" />
+                            </div>
+                          </div>
                         </div>
                       </div>
+                      <!-- back-end -->
+                      <div class="skill back-end">
+                        <h2 class="skill-title"> 백 엔드</h2>
+                        <div class="skill-list">
+                          <div class="skill-wrap left">
+                            <div class="box nodejs" style="--i:1">
+                              <h2 class="name">Node.js</h2>
+                              <img src="./asset/img/skills/nodejs.png" alt="Node.js" class="icon" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- tool -->
+                      <div class="skill tool">
+                        <h2 class="skill-title">도구</h2>
+                        <div class="skill-list">
+                          <div class="skill-wrap right">
+                            <div class="box git" style="--i:1">
+                              <h2 class="name">Git</h2>
+                              <img src="./asset/img/skills/git.png" alt="git" class="icon" />
+                            </div>
+                            <div class="box babel" style="--i:2">
+                              <h2 class="name">Babel</h2>
+                              <img src="./asset/img/skills/babel.png" alt="Babel" class="icon" />
+                            </div>
+                          </div>
+                          <div class="skill-wrap right">
+                            <div class="box webpack" style="--i:3">
+                              <h2 class="name">Webpack</h2>
+                              <img src="./asset/img/skills/webpack.png" alt="webpack" class="icon">
+                            </div>
+                            <div class="box jest" style="--i:4">
+                              <h2 class="name">Jest</h2>
+                              <img src="./asset/img/skills/jest.png" alt="Jest" class="icon">
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                </div>
+              </div>
+      
+            </div>
+      
+          </div>
+        </section> 
+    
+        <!-- ========== 토이프로젝트 section ========== -->
+        <section class="toy-project-section" id="toy-project">
+          <div class="toy-project-text-group">
+            <h1 class="toy-project-title">Toy Projects</h1>
+            <p class="toy-project-text">토이 프로젝트</p>
+          </div>
+          <div class="container">
+            <div class="row">
+              
+              <!-- 스타벅스  -->
+              <div class="col-sm-4 col-md-4">
+                <div class="imgBx starbucks " style="--i:1">
+                  <img src="./asset/img/project-img/starbucks-logo.png" alt="starbucks-logo">
+                </div>
+                <div class="project-card " style="--i:1">
+                    <span class="bg-effect starbucks"></span>
+                    <div class="content">
+                      <h2>스타벅스</h2>
+                      <p>Html ,SCSS, JS</p>
+                      <br>
+                      <p>
+                        전세계에서 가장 유명한 커피 프렌차이즈 "스타벅스"의 랜딩페이지 UI를 
+                        ScrollMagic, Gsap 등의 라이브러리를 활용해 인터렉티브 하게 구현했습니다.
+                      </p>
                     </div>
-                  </div>
-                  <!-- front-end -->
-                  <div class="skill front-end">
-                    <h2 class="skill-title"> 프론트 엔드</h2>
-                    <div class="skill-list">
-                      <div class="skill-wrap right">
-                        <div class="box bootstrap" style="--i:1">
-                          <h2 class="name">Bootstrap</h2>
-                          <img src="./asset/img/skills/Bootstrap.png" alt="Bootstrap" class="icon" />
-                        </div>
-                        <div class="box jquery" style="--i:2">
-                          <h2 class="name">JQuery</h2>
-                            <img src="./asset/img/skills/JQuery.png" alt="JQuery" class="icon" />
-                        </div>
-                        <div class="box vue" style="--i:3">
-                          <h2 class="name">Vue</h2>
-                            <img src="./asset/img/skills/vue.png" alt="Vue" class="icon" />
-                        </div>
-                      </div>
-                      <div class="skill-wrap right">
-                        <div class="box pug" style="--i:4">
-                          <h2 class="name">Pug</h2>
-                          <img src="./asset/img/skills/pug.png" alt="Pug" class="icon" />
-                        </div>
-                      </div>
+                    <div class="project-btn-group">
+                      <a class="project-btn btn-white" href="https://starbucks-clone-project.netlify.app/" target="_blank">사이트 가기</a>
+                      <a class="project-btn btn-white" href="https://github.com/seadonggyun4/Starbucks/" target="_blank">GitHub 가기</a>
                     </div>
-                  </div>
-                  <!-- back-end -->
-                  <div class="skill back-end">
-                    <h2 class="skill-title"> 백 엔드</h2>
-                    <div class="skill-list">
-                      <div class="skill-wrap left">
-                        <div class="box nodejs" style="--i:1">
-                          <h2 class="name">Node.js</h2>
-                          <img src="./asset/img/skills/nodejs.png" alt="Node.js" class="icon" />
-                        </div>
-                      </div>
+                </div>
+              </div>
+              <!-- Inv-Clone -->
+              <div class="col-sm-4 col-md-4">
+                <div class="imgBx inv-clone " style="--i:2">
+                  <p>INV</p>
+                </div>  
+                <div class="project-card " style="--i:2"> 
+                    <span class="bg-effect inv-clone"></span>
+                    <div class="content">
+                      <h2>Inv-clone</h2>
+                      <p>Html ,SCSS, JS</p>
+                      <br>
+                      <p>
+                        웹 에이전시인 주식회사 "아이엔뷰 커뮤니케이션" 의 메인페이지 UI를 분석해 
+                        fullpage.js, swiper.js 를 사용해 만들었습니다.
+                      </p>
                     </div>
-                  </div>
-                  <!-- tool -->
-                  <div class="skill tool">
-                    <h2 class="skill-title">도구</h2>
-                    <div class="skill-list">
-                      <div class="skill-wrap right">
-                        <div class="box git" style="--i:1">
-                          <h2 class="name">Git</h2>
-                          <img src="./asset/img/skills/git.png" alt="git" class="icon" />
-                        </div>
-                        <div class="box babel" style="--i:2">
-                          <h2 class="name">Babel</h2>
-                          <img src="./asset/img/skills/babel.png" alt="Babel" class="icon" />
-                        </div>
-                      </div>
-                      <div class="skill-wrap right">
-                        <div class="box webpack" style="--i:3">
-                          <h2 class="name">Webpack</h2>
-                          <img src="./asset/img/skills/webpack.png" alt="webpack" class="icon">
-                        </div>
-                        <div class="box jest" style="--i:4">
-                          <h2 class="name">Jest</h2>
-                          <img src="./asset/img/skills/jest.png" alt="Jest" class="icon">
-                        </div>
-                      </div>
-                  </div>
-                  </div>
+                    <div class="project-btn-group">
+                      <a class="project-btn btn-white" href="https://inv-clone.netlify.app/" target="_blank">사이트 가기</a>
+                      <a class="project-btn btn-white" href="https://github.com/seadonggyun4/InV-clone" target="_blank">GitHub 가기</a>       
+                    </div>
+                </div>
+              </div>
+              <!-- 오늘의집 -->
+              <div class="col-sm-4 col-md-4">
+                <div class="imgBx tomorrow-house " style="--i:3">
+                  <img src="./asset/img/project-img/tomorrow-house-logo.png" alt="tomorrow-house-logo">
+                </div>  
+                <div class="project-card " style="--i:3"> 
+                    <span class="bg-effect tomorrow-house"></span>
+                    <div class="content">
+                      <h2>내일의집</h2>
+                      <p>Html ,SCSS, JS</p>
+                      <br>
+                      <p>
+                        자취생 들의 필수어플 "오늘의 집" 의 상품판매 페이지의 UI 를 SCSS 를 활용해
+                        크게는Layout 단위부터 componet 단위까지 자세하게 분석한뒤 만들었습니다.
+                      </p>
+                    </div>
+                    <div class="project-btn-group">
+                      <a class="project-btn btn-white" href="https://todayhouse.netlify.app/" target="_blank">사이트 가기</a>
+                      <a class="project-btn btn-white" href="https://github.com/seadonggyun4/TodayHouse-clone-project" target="_blank">GitHub 가기</a>       
+                    </div>
+                </div>
+              </div>
+              <!-- MovieCart -->
+              <div class="col-sm-4 col-md-4">
+                <div class="imgBx moviecart " style="--i:1">
+                  <img src="./asset/img/project-img/moviecart-logo.png" alt="moviecart-logo">
+                </div>
+                <div class="project-card " style="--i:1">
+                    <span class="bg-effect moviecart"></span>
+                    <div class="content">
+                      <h2>MovieCart</h2>
+                      <p>Vue, Vuex, Webpack</p>
+                      <br>
+                      <p>
+                        OMDB API 를 통해 영화검색을 할수 있는 간단한 사이트 입니다.
+                        영화 데이터 상태관리는 Vuex를 통해 movie, about 두개의 데이터 모듈로 나눠 관리하고 있습니다.
+                      </p>
+                    </div>
+                    <div class="project-btn-group">
+                      <a class="project-btn btn-white" href="https://moviecart.netlify.app/#/" target="_blank">사이트 가기</a>
+                      <a class="project-btn btn-white" href="https://github.com/seadonggyun4/MovieCart" target="_blank">GitHub 가기</a>
+                    </div>
+                </div>
+              </div>
+              <!-- CLOSCA Shop -->
+              <div class="col-sm-4 col-md-4">
+                <div class="imgBx closca-shop " style="--i:2">
+                  <img src="./asset/img/project-img/closoca-logo.png" alt="moviecart-logo">
+                </div>
+                <div class="project-card " style="--i:2">
+                    <span class="bg-effect closca-shop"></span>
+                    <div class="content">
+                      <h2>CLOSCA Shop</h2>
+                      <p>React, Redux, WebGL, Scss</p>
+                      <br>
+                      <p>
+                        스페인의 CLOSCA 브랜드 의 인기있는 판매상품인 물병과, 헬멧을 판매하는 사이트를
+                        React, Redux, WebGL 를 공부하며 만들어 보았습니다.
+                      </p>
+                    </div>
+                    <div class="project-btn-group">
+                      <a class="project-btn btn-white" href="http://closca-shop.s3-website.ap-northeast-2.amazonaws.com/" target="_blank">사이트 가기</a>
+                      <a class="project-btn btn-white" href="https://github.com/seadonggyun4/Closca_Shop" target="_blank">GitHub 가기</a>
+                    </div>
+                </div>
+              </div>
             </div>
           </div>
-  
+        </section>
+
+        <!-- ========== SVG ========== -->
+        <svg class="stroke" preserveAspectRatio="xMidYMid slice" fill-rule="evenodd" stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 1000 8500 14948.91">
+          <defs>
+            <mask id="mask">
+              <path class="stroke__mask" d="M1799.62,844.469c0,-0 86.67,225.626 352.604,419.941c265.934,194.316 639.108,259.194 749.439,269.047c354.541,31.661 727.998,-254.715 1275.36,171.001c283.766,220.701 208.993,289.777 360.628,584.373c110.268,214.227 299.857,255.624 584.565,289.314c364.85,43.174 595.705,365.716 482.878,740.965c-149.255,496.405 -1272.82,904.06 -1765.26,829.414c-544.759,-82.578 -1046.53,-396.976 -970.684,-823.131c60.23,-338.391 593.618,-555.021 997.691,-232.209c552.948,441.75 831.032,965.428 629.208,1462.52c-201.824,497.089 -1034.61,402.817 -1549.24,718.21c-550.19,337.185 -200.112,988.499 -573.659,1558.23c-467.372,712.831 -455.685,1334.28 -873.02,1410.67c-465.433,85.192 -687.627,-545.142 -685.933,-964.731c1.612,-399.587 187.124,-708.201 747.229,-552.65c576.661,160.149 1237.76,1333.83 1850.63,1556.19c651.17,236.262 1193.39,-177.838 1723.39,-305.067c407.152,-97.738 1072.39,311.636 1368.98,136.826c207.995,-122.589 185.857,-552.168 -92.724,-479.922c-287.71,74.613 -535.68,360.921 -327.133,707.748c142.416,236.848 664.326,986.738 1166.91,1151.8c362.002,118.89 446.489,489.326 430.242,1068.17c-13.015,463.7 -839.212,630.514 -1258.24,614.161c-347.998,-13.581 -882.839,-28.699 -1100.92,148.324c-344.788,279.879 -432.27,742.736 -486.409,977.629c-52.38,227.261 -169.826,2150.04 -20.371,2401.76" />
+            </mask>
+          </defs>
+          <path class="stroke__wide" d="M4462.32,625c0,0 14.613,622.459 -463.862,807.768c-481.301,186.404 -1447.09,-126.375 -1575.51,541.543c-124.818,649.224 959.032,311.455 1893.1,826.688c1089.01,600.699 -524.942,1127.57 -1302.17,1453.96c-951.997,399.786 -995.709,1421.16 -230.78,1308.47c1157.75,-170.555 2955.04,-369.639 2625.82,434.977c-258.167,630.956 -1834.68,308.013 -1915.59,964.376c-123.736,1003.78 785.635,859.091 1309.31,778.296c976.475,-150.654 1261.08,579.399 1203.78,1013.11c-62.259,471.302 -669.89,1009.61 -1534.75,1125.17c-1019.84,136.266 -2356.12,174.662 -2200.88,942.9c130.32,644.912 1957.69,378.097 2999.78,691.136c860.372,258.452 772.286,1223.59 346.923,1696.49c-769.812,855.852 -852.502,1355.35 -852.502,1355.35" />
+          <path class="stroke__narrow" mask="url(#mask)" d="M1799.62,844.469c0,-0 86.67,225.626 352.604,419.941c265.934,194.316 639.108,259.194 749.439,269.047c354.541,31.661 727.998,-254.715 1275.36,171.001c283.766,220.701 208.993,289.777 360.628,584.373c110.268,214.227 299.857,255.624 584.565,289.314c364.85,43.174 595.705,365.716 482.878,740.965c-149.255,496.405 -1272.82,904.06 -1765.26,829.414c-544.759,-82.578 -1046.53,-396.976 -970.684,-823.131c60.23,-338.391 593.618,-555.021 997.691,-232.209c552.948,441.75 831.032,965.428 629.208,1462.52c-201.824,497.089 -1034.61,402.817 -1549.24,718.21c-550.19,337.185 -200.112,988.499 -573.659,1558.23c-467.372,712.831 -455.685,1334.28 -873.02,1410.67c-465.433,85.192 -687.627,-545.142 -685.933,-964.731c1.612,-399.587 187.124,-708.201 747.229,-552.65c576.661,160.149 1237.76,1333.83 1850.63,1556.19c651.17,236.262 1193.39,-177.838 1723.39,-305.067c407.152,-97.738 1072.39,311.636 1368.98,136.826c207.995,-122.589 185.857,-552.168 -92.724,-479.922c-287.71,74.613 -535.68,360.921 -327.133,707.748c142.416,236.848 664.326,986.738 1166.91,1151.8c362.002,118.89 446.489,489.326 430.242,1068.17c-13.015,463.7 -839.212,630.514 -1258.24,614.161c-347.998,-13.581 -882.839,-28.699 -1100.92,148.324c-344.788,279.879 -432.27,742.736 -486.409,977.629c-52.38,227.261 -169.826,2150.04 -20.371,2401.76" />
+          <path class="stroke__blob" d="M16.433,16948.9l0,-4223.62l-16.433,-1736.42c48.513,-32.042 209.383,-99.459 464.775,-112.625c319.243,-16.417 847.398,391.875 1039.88,657c192.484,265.166 744.113,352 1298.09,279.25c553.975,-72.75 542.242,-342.584 880.258,-783.709c338.021,-441.166 823.925,-455.208 1295.74,-415.333c471.837,39.875 847.379,438.792 960.087,750.875c112.667,312.083 544.584,335.542 880.25,344.917c335.667,9.375 896.667,96.208 1295.75,382.5c319.209,229 389.667,768.041 384.959,1008.96l-0,3848.21l-8483.36,0Z" />
+        </svg>
+      </div>
+
+    </main>
+    <!-- ======================================== footer ======================================== -->
+    <footer>
+      <section class="footer">
+        <h1 class="footer-title">
+          저와 나누고 싶은 얘기가 있으시다면
+        </h1>
+        <a class="mail" href="mailto:seadonggyun@gmail.com">seadonggyun@gmail.com</a>
+        <div class="footer-tag btn">
+          <p>어떤 내용이어도 좋아요 😉🙌</p>
         </div>
-  
-      </div>
-    </section> 
-
-    <!-- ========== 토이프로젝트 section ========== -->
-    <section class="toy-project-section" id="toy-project">
-      <div class="toy-project-text-group">
-        <h1 class="toy-project-title">Toy Projects</h1>
-        <p class="toy-project-text">토이 프로젝트</p>
-      </div>
-      <div class="container">
-        <div class="row">
-
-          <!-- 오늘의집 -->
-          <div class="col-sm-4 col-md-4">
-            <div class="imgBx tomorrow-house " style="--i:1">
-              <img src="./asset/img/project-img/tomorrow-house-logo.png" alt="tomorrow-house-logo">
-            </div>  
-            <div class="project-card " style="--i:1"> 
-                <span class="bg-effect tomorrow-house"></span>
-                <div class="content">
-                  <h2>내일의집</h2>
-                  <p>Html ,SCSS</p>
-                  <br>
-                  <p>
-                    자취생 들의 필수어플 "오늘의 집" 의 상품판매 페이지의 UI 를 SCSS 를 활용해
-                    크게는Layout 단위부터 componet 단위까지 자세하게 분석한뒤 만들었습니다.
-                  </p>
-                </div>
-                <div class="project-btn-group">
-                  <a class="project-btn btn-white" href="https://todayhouse.netlify.app/" target="_blank">사이트 가기</a>
-                  <a class="project-btn btn-white" href="https://github.com/seadonggyun4/TodayHouse-clone-project" target="_blank">GitHub 가기</a>       
-                </div>
-            </div>
-           </div>
-          <!-- 스타벅스  -->
-          <div class="col-sm-4 col-md-4">
-            <div class="imgBx starbucks " style="--i:1">
-              <img src="./asset/img/project-img/starbucks-logo.png" alt="starbucks-logo">
-            </div>
-            <div class="project-card " style="--i:1">
-                <span class="bg-effect starbucks"></span>
-                <div class="content">
-                  <h2>스타벅스</h2>
-                  <p>Html ,SCSS, JS</p>
-                  <br>
-                  <p>
-                    전세계에서 가장 유명한 커피 프렌차이즈 "스타벅스"의 랜딩페이지 UI를 
-                    ScrollMagic, Gsap 등의 라이브러리를 활용해 인터렉티브 하게 구현했습니다.
-                  </p>
-                </div>
-                <div class="project-btn-group">
-                  <a class="project-btn btn-white" href="https://starbucks-clone-project.netlify.app/" target="_blank">사이트 가기</a>
-                  <a class="project-btn btn-white" href="https://github.com/seadonggyun4/Starbucks/" target="_blank">GitHub 가기</a>
-                </div>
-            </div>
-          </div>
-          <!-- MovieCart -->
-          <div class="col-sm-4 col-md-4">
-            <div class="imgBx moviecart " style="--i:1">
-              <img src="./asset/img/project-img/moviecart-logo.png" alt="moviecart-logo">
-            </div>
-            <div class="project-card " style="--i:1">
-                <span class="bg-effect moviecart"></span>
-                <div class="content">
-                  <h2>MovieCart</h2>
-                  <p>Vue, Vuex, Webpack</p>
-                  <br>
-                  <p>
-                    OMDB API 를 통해 영화검색을 할수 있는 간단한 사이트 입니다.
-                    영화 데이터 상태관리는 Vuex를 통해 movie, about 두개의 데이터 모듈로 나눠 관리하고 있습니다.
-                  </p>
-                </div>
-                <div class="project-btn-group">
-                  <a class="project-btn btn-white" href="https://moviecart.netlify.app/#/" target="_blank">사이트 가기</a>
-                  <a class="project-btn btn-white" href="https://github.com/seadonggyun4/MovieCart" target="_blank">GitHub 가기</a>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!-- ======================================== footer ======================================== -->
-  <footer>
-    <section class="footer">
-      <h1 class="footer-title">
-        저와 나누고 싶은 얘기가 있으시다면
-      </h1>
-      <a class="mail" href="mailto:seadonggyun@gmail.com">seadonggyun@gmail.com</a>
-      <div class="footer-tag btn">
-        <p>어떤 내용이어도 좋아요 😉🙌</p>
-      </div>
-    </section>
-  </footer>
-
-  <!-- button to top -->
-  <div class="to-top btn">
-    <span class="material-icons">
-      arrow_upward
-    </span>
+      </section>
+    </footer>
+    <!-- button to top -->
+    <div class="to-top btn">
+      <span class="material-icons">
+        arrow_upward
+      </span>
+    </div>
   </div>
-
-  <!-- <div class="background"></div> -->
-  <!-- ========================== javascript ====================== -->
-  <!-- <script src="./js/main.js"></script> -->
-
-  <!-- particle.js -->
-  <!-- <script src="./asset/lib/particles.min.js"></script> -->
 </body>
 </html>

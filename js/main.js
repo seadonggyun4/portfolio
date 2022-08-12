@@ -306,7 +306,7 @@ const toyTextEl = document.querySelector('.toy-project-text-group .toy-project-t
 new ScrollMagic
     .Scene({
       triggerElement:toyTitleEl,
-      triggerHook:.6,
+      triggerHook:.8,
     })
     .setClassToggle(toyTitleEl,'active')
     .addTo(controller)
@@ -316,7 +316,7 @@ new ScrollMagic
 new ScrollMagic
     .Scene({
       triggerElement:toyTextEl,
-      triggerHook:.6,
+      triggerHook:.8,
     })
     .setClassToggle(toyTextEl,'active')
     .addTo(controller)
@@ -342,7 +342,7 @@ imgBxEls.forEach(function(imgBxEl){
   new ScrollMagic
       .Scene({
         triggerElement: imgBxEl,
-        triggerHook: .6,
+        triggerHook: 1,
         reverse: false,
       })
       .setClassToggle(imgBxEl, 'fade-in')
@@ -355,7 +355,7 @@ projectCardEls.forEach(function(projectCardEl){
   new ScrollMagic
       .Scene({
         triggerElement:projectCardEl,
-        triggerHook: .6,
+        triggerHook: 1,
         reverse:false,
       })
       .setClassToggle(projectCardEl, 'fade-in')
@@ -398,7 +398,273 @@ window.addEventListener('scroll',_.throttle(function(){
 
 //to-top 버튼 클릭시 window창 최상위로 이동
 toTopEl.addEventListener('click',function(){
-  gsap.to(window,.7,{
-    scrollTo: 0
-  })
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
 })
+
+// [타이틀 색션 Particle효과 : title-section] ============================================================================================
+function Particle (){
+  window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+
+  var canvas = document.querySelector("canvas");
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight;
+
+
+  var ctx = canvas.getContext("2d");
+  ctx.globalCompositeOperation = "source-over"; 
+
+  var particles = [];
+  var pIndex = 0;
+  var x, y, frameId;
+
+  //Particle
+  function Particle(x,vx,vy,color,size){
+    this.x = x;
+    this.y = -canvas.height/2;
+    this.vx = vx;
+    this.vy = vy;
+    this.color = color;
+    particles[pIndex] = this;
+    this.id = pIndex;
+    pIndex++;
+    this.life = 0;
+    this.maxlife = 600;
+    this.degree = getRandom(0,360);//
+    this.size = Math.floor(getRandom(size*0.8,size));//
+  };
+  Particle.prototype.draw = function(){
+    this.degree += 1;
+    this.vx *= 0.99;//
+    this.vy *= 0.999;//
+    this.x += this.vx+Math.cos(this.degree*Math.PI/180);
+    this.y += this.vy;
+    this.width = this.size;
+    this.height = Math.cos(this.degree*Math.PI/45)*this.size;
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.moveTo(this.x+this.x/2, this.y+this.y/2);
+    ctx.lineTo(this.x+this.x/2+this.width/2, this.y+this.y/2+this.height);
+    ctx.lineTo(this.x+this.x/2+this.width+this.width/2, this.y+this.y/2+this.height);
+    ctx.lineTo(this.x+this.x/2+this.width, this.y+this.y/2);
+    ctx.closePath();
+    ctx.fill();
+    this.life++;
+    if(this.life >= this.maxlife){
+      delete particles[this.id];
+    }
+  }
+
+
+  //SetStyles
+  var params,params_A,params_B,params_C;
+  function SetStyles(){
+
+    params = {
+      'colorful_mode': false,
+      'amount': 5,
+      'bg_color' : "#00155c",
+      'vx' : 2,
+      'vy' : 4,
+      'size' : 10
+
+    };
+
+    params_A = {
+      'color': "#5e96ff",
+    };
+
+    params_B = {
+      'color': "#FFF",
+    };
+  }
+  SetStyles();
+
+  
+  function loop(){
+    ctx.clearRect(0,0, canvas.width, canvas.height);  
+    canvas.style.background = params.bg_color;
+
+
+
+    if(frameId % (11-params.amount) == 0){
+      if (params.colorful_mode) {
+        var hue = Math.floor(getRandom(0,12.99))*30;
+        var hsl_color = "hsl(" + hue + ", 80%, 60%)";
+        new Particle(canvas.width*Math.random(), getRandom(-params.vx, params.vx), getRandom(params.vy-2, params.vy),hsl_color,params.size);
+      } else{
+        var x1 = canvas.width*Math.random()+canvas.width/2*Math.random();
+        var x2 = canvas.width*Math.random()-canvas.width/2*Math.random();
+        new Particle(x1,-1 *getRandom(params.vx-2, params.vx),  getRandom(params.vy-2, params.vy),params_A.color,params.size);
+        new Particle(x2,getRandom(params.vx-2, params.vx),  getRandom(params.vy-2, params.vy),params_B.color,params.size);
+      }
+
+    }
+
+    for(var i in particles){
+      particles[i].draw();
+    }
+    frameId = requestAnimationFrame(loop);
+    if(frameId % 2 == 0) { return; }
+    // stats.update();
+  }
+  loop();
+
+
+  window.addEventListener("resize", function(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    x = canvas.width / 2;
+    y = canvas.height / 2;
+  });
+
+  function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+}
+Particle()
+
+// [타이틀 색션 click 콘페티 효과 : title-section] ============================================================================================
+/* Random Id generator for giving confetti elements unique IDs */
+const randomId = function(length) {
+  var result = [];
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+    result.push(characters.charAt(Math.floor(Math.random() * 
+charactersLength)));
+}
+return result.join('');
+}
+
+/* Short function to create confetti at x, y with confettiItems number of items */
+const createConfetti = function(x, y, confettiItems) {
+  let createElement = document.createElement('div');
+  createElement.classList.add('confetti');
+  let makeId = randomId(10);
+  createElement.setAttribute('data-id', makeId);
+  let confettiHTML = '';
+  let colors = [ '#5e96ff', '#FAFAFA', '#5e96ff', '#232323', '#00155c' ]
+  
+  for(var i = 0; i < confettiItems; ++i) {
+      let color = Math.floor(Math.random() * (colors.length));
+      confettiHTML += `<div class="confetti-item" style="background-color: ${colors[color]};" data-angle="${Math.random()}" data-speed="${Math.random()}"></div>`;
+      confettiHTML += `<div class="confetti-item reverse" style="background-color: ${colors[color]};" data-angle="${Math.random()}" data-speed="${Math.random()}"></div>`;
+  }
+  
+  createElement.style.position = `fixed`;
+  createElement.style.top = `${y}px`;
+  createElement.style.left = `${x}px`;
+  createElement.innerHTML = confettiHTML;
+  document.body.appendChild(createElement);
+  
+  let gravity =  50; // Fjolt is a high gravity planet
+  let maxSpeed = 105000; // Pixels * 1000
+  let minSpeed = 65000; // Pixels * 1000
+  let t = 0; // Time starts at 0
+  let maxAngle = 1500; // Radians * 1000
+  let minAngle = 400; // Radians * 1000
+  let opacity = 1;
+  let rotateAngle = 0;
+
+  let interval = setInterval(function() {
+      document.querySelectorAll(`[data-id="${makeId}"] .confetti-item`).forEach(function(item) {
+          let modifierX = 1;
+          let modifierY = 1;
+          if(item.classList.contains('reverse')) {
+              modifierX = -1;
+          }
+          item.style.opacity = opacity;
+          let randomNumber = parseFloat(item.getAttribute('data-angle'));
+          let otherRandom = parseFloat(item.getAttribute('data-speed'));
+          let newRotateAngle = randomNumber * rotateAngle;
+          let angle = (randomNumber * (maxAngle - minAngle) + minAngle) / 1000;
+          let speed = (randomNumber * (maxSpeed - minSpeed) + minSpeed) / 1000;
+          let realT = t * (parseFloat(item.getAttribute('data-angle')));
+          let x = speed * t * Math.cos(angle) + (50 * otherRandom * t);
+          let y = speed * t * Math.sin(angle) - (0.5 * gravity * Math.pow(t, 2))  + (50 * otherRandom * t);
+          item.style.transform = `translateX(${x * modifierX}px) translateY(${y * -1 * modifierY}px) rotateY(${newRotateAngle}deg) scale(${1})`;
+      })
+      t += 0.1;
+      rotateAngle += 3;
+      opacity -= 0.02;
+      if(t >= 6) {
+          t = 0.1;
+          if(document.querySelector(`[data-id="${makeId}"]`) !== null) {
+              document.querySelector(`[data-id="${makeId}"]`).remove();
+          }
+          clearInterval(interval);
+      }
+  }, 33.33);
+}
+
+document.addEventListener('DOMContentLoaded', function(e) {
+document.querySelector('#wrap').addEventListener('pointerdown', function(e) {
+  createConfetti(e.pageX, e.pageY, 20);
+});
+});
+
+// [SVG 애니메이션 효과 : SVG container] ============================================================================================
+function svgEffect(){
+  const isAnimationOk = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+
+	if(isAnimationOk) {
+		setupAnimations();
+	}
+
+	function setupAnimations() {
+
+		gsap.registerPlugin(MotionPathPlugin);
+
+		// gsap.from(".stroke__wide", {
+		// 	drawSVG: "0%",
+		// 	delay: 1,
+		// 	scrollTrigger: {
+		// 		trigger: "main",
+		// 		start: "-10% top",
+		// 		end: "bottom+=30% bottom",
+		// 		scrub: 1
+		// 	}
+		// });
+
+		// gsap.from(".stroke__mask", {
+		// 	drawSVG: "0%",
+		// 	scrollTrigger: {
+		// 		trigger: "#page",
+		// 		start: "-7% top",
+		// 		end: "bottom+=20% bottom",
+		// 		scrub: 1
+		// 	}
+		// });
+
+		gsap.from(".stroke__narrow", {
+			"--dashOffset": 2000,
+			scrollTrigger: {
+				trigger: "main",
+				start: "-10% top",
+				end: "bottom+=30% bottom",
+				scrub: 2
+			}
+		});
+
+		gsap.set(".stroke__blob", {transformOrigin: "50% 100%"});
+		gsap.from(".stroke__blob", {
+			scale: 0.85,
+			y: 3000,
+			x: -500,
+			rotate: 10,
+			delay: 1,
+			scrollTrigger: {
+				trigger: "main",
+				start: "center top",
+				end: "bottom top",
+				toggleActions: "restart pause resume reset",
+				scrub: 1
+			}
+		});
+	}
+}
+svgEffect()

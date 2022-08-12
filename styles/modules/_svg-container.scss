@@ -1,0 +1,87 @@
+:root {
+    --dashOffset: 0; 
+}
+
+.svg-container{
+    position: relative;
+    height: 100%;
+    -ms-scroll-snap-type: y proximity;
+    scroll-snap-type: y proximity;
+    -webkit-animation: fade-in 0.5s linear 0.5s both;
+    animation: fade-in 0.5s linear 0.5s both;
+
+
+
+    @-webkit-keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+    }
+
+    .stroke {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 62.5%;
+      stroke-linecap: round;
+      fill: none;
+      z-index: 0;
+    }
+
+    .stroke__wide {
+      display: none;
+      stroke: $svg-color;
+      stroke-width: 1500;
+    }
+
+    .stroke__narrow {
+      stroke: $border-color;
+      stroke-width: 15;
+      stroke-dasharray: 30 60;
+      stroke-dashoffset: var(--dashOffset);
+    }
+
+    .stroke__mask {
+      stroke: #f8f8f8;
+      stroke-width: 15;
+    }
+
+    .stroke__blob {
+      display: none;
+      fill: $svg-color;
+    }
+
+    @include responsive(T){
+      .stroke{
+        height: 100%;
+      }
+
+      .stroke__wide {
+        display: block;
+        stroke-width: 1300;
+      }
+
+      .stroke__blob {
+        display: block;
+      }
+    }
+
+    @include responsive(D){
+      height: 4700px;
+
+      .stroke__wide {
+        display: block;
+        stroke-width: 1500;
+      }
+    }
+}
+
+  
+

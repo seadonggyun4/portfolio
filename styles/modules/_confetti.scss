@@ -1,0 +1,14 @@
+.confetti {
+    position: absolute;
+    z-index: 1;
+}
+
+.confetti-item {
+    width: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    border-radius: 2px;
+}
+

@@ -1,6 +1,7 @@
 .project-card{
   position: relative;
   margin: 50px auto;
+  margin-bottom: 0;
   max-width: 300px;
   height: 215px;
   border-radius: 20px;
@@ -8,6 +9,7 @@
   box-shadow: 0 5px 202px rgba(0, 0, 0, 0.2);
   transition: all .5s ease-in-out;
   transition-delay: calc(var(--i) * 0.2s);
+  z-index: $toy-prject-z-index;
   opacity: 0;
   overflow: hidden;
   cursor: pointer;
@@ -23,19 +25,27 @@
     background: $card-bg-color;
     transform: translate(-50%,-50%);
     transition: width .5s, height .5s;
-    z-index: $bg-effect-z-index;
-
-    &.tomorrow-house{
-      background: #208bd9;
-    }
 
     &.starbucks{
       background: #ffbbc3;
     }
 
+    &.inv-clone{
+      background: #ffcd93;
+    }
+
+    &.tomorrow-house{
+      background: #208bd9;
+    }
+
     &.moviecart{
       background-color: #3EAF7C;
     }
+
+    &.closca-shop{
+      background: rgb(97,218,251);
+    }
+
   }
 
   .content{
@@ -47,7 +57,6 @@
     visibility: hidden;
     opacity: 0;
     transition: margin-top .5s ease-in-out, opacity .8s ease-in-out;
-    z-index: $content-z-index;
 
     h2{
       @include text-style(24);
@@ -64,7 +73,6 @@
     opacity: 0;
     align-self: center;
     transition: opacity .9s ease-in-out;
-    z-index: $project-btn-z-index;
 
     .project-btn{
       position: relative;
@@ -102,7 +110,7 @@
 
 
   &:hover, &:active, &:focus{
-    height: 420px;
+    height: 450px;
 
     .bg-effect{
       width: 1500px;

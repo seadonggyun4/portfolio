@@ -41,10 +41,19 @@
     font-family: 'Prata', serif;
     font-size: 250px;
     color: #009bfc;
+    z-index: calc($title-z-index - 1);
     // color: #e5e5e5;
   }
 
-  
+  #TitleCanvas canvas{
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $title-bg-color;
+  }
 
   @include responsive(T){
     .title{

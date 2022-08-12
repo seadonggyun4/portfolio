@@ -1,6 +1,7 @@
 .toy-project-text-group{
   @include flexbox-column(center,center);
   margin-bottom: 100px;
+  z-index: $toy-prject-z-index;
 
 
   .toy-project-title{

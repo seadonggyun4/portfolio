@@ -1,3 +1,7 @@
+import drawSVG from "./DrawSVGPlugin"; 
+
+
+
 // [header 타이틀 로고 animation: header] ============================================================================================
 // gsap 라이브러리 사용
 // lodash 라이브러리 사용
@@ -608,6 +612,8 @@ document.querySelector('#wrap').addEventListener('pointerdown', function(e) {
 });
 
 // [SVG 애니메이션 효과 : SVG container] ============================================================================================
+
+
 function svgEffect(){
   const isAnimationOk = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
 
@@ -619,26 +625,26 @@ function svgEffect(){
 
 		gsap.registerPlugin(MotionPathPlugin);
 
-		// gsap.from(".stroke__wide", {
-		// 	drawSVG: "0%",
-		// 	delay: 1,
-		// 	scrollTrigger: {
-		// 		trigger: "main",
-		// 		start: "-10% top",
-		// 		end: "bottom+=30% bottom",
-		// 		scrub: 1
-		// 	}
-		// });
+		gsap.from(".stroke__wide", {
+			drawSVG: "0%",
+			delay: 1,
+			scrollTrigger: {
+				trigger: ".svg-container",
+				start: "-10% top",
+				end: "bottom+=30% bottom",
+				scrub: 1
+			}
+		});
 
-		// gsap.from(".stroke__mask", {
-		// 	drawSVG: "0%",
-		// 	scrollTrigger: {
-		// 		trigger: "#page",
-		// 		start: "-7% top",
-		// 		end: "bottom+=20% bottom",
-		// 		scrub: 1
-		// 	}
-		// });
+		gsap.from(".stroke__mask", {
+			drawSVG: "0%",
+			scrollTrigger: {
+				trigger: "#page",
+				start: "-7% top",
+				end: "bottom+=20% bottom",
+				scrub: 1
+			}
+		});
 
 		gsap.from(".stroke__narrow", {
 			"--dashOffset": 2000,

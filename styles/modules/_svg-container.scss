@@ -29,16 +29,15 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 62.5%;
+      height: 83%;
       stroke-linecap: round;
       fill: none;
       z-index: 0;
     }
 
     .stroke__wide {
-      display: none;
       stroke: $svg-color;
-      stroke-width: 1500;
+      stroke-width: 500;
     }
 
     .stroke__narrow {
@@ -64,7 +63,6 @@
       }
 
       .stroke__wide {
-        display: block;
         stroke-width: 1300;
       }
 

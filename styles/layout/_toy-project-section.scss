@@ -1,11 +1,11 @@
 .toy-project-section{
   @include flexbox-column(center,center);
   position: relative;
-  // padding: 200px 0 200px;
+  padding: 200px 0 200px;
   // height: 1300px;
   width: 100%;
-  // background-color: $section-bg-color; 
-  background: linear-gradient(#fff 0%, $svg-color 90%);
+  background-color: $section-bg-color; 
+  
 
 
 
@@ -56,6 +56,11 @@
     &.closca-shop{
       background: rgb(97,218,251);
     }
+  }
+
+  @include responsive(T){
+    padding: 0;
+    background: linear-gradient(#fff 0%, $svg-color 90%);
   }
 }
 

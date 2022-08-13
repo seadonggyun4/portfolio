@@ -267,36 +267,33 @@ boxEls.forEach(function(boxEl){
 const cardEls = document.querySelectorAll('.project-card')
 const spanEls = document.querySelectorAll('.project-card span')
 
-cardEls.forEach(function(cardEl){
-  cardEl.addEventListener('mouseenter',function(e){
-    // let top1 = window.pageYOffset + cardEl.getBoundingClientRect().top
-    // let left1 = window.pageXOffset + cardEl.getBoundingClientRect().left
+// cardEls.forEach(function(cardEl){
+//   cardEl.addEventListener('mouseenter',function(e){
+//     // let top1 = window.pageYOffset + cardEl.getBoundingClientRect().top
+//     // let left1 = window.pageXOffset + cardEl.getBoundingClientRect().left
 
-    x = e.pageX - $(this).offset().left,
-    y = e.pageY - $(this).offset().top;
+//     x = e.pageX - $(this).offset().left,
+//     y = e.pageY - $(this).offset().top;
 
-    //jquery 문법
-    $(this).find('span').css({top:y, left:x})
-  })
+//     //jquery 문법
+//     $(this).find('span').css({top:x, left:y})
+//   })
 
-  cardEl.addEventListener('mouseout',function(e){
-    // let top2 = window.pageYOffset + cardEl.getBoundingClientRect().top
-    // let left2 = window.pageXOffset + cardEl.getBoundingClientRect().left
+//   cardEl.addEventListener('mouseout',function(e){
+//     // let top2 = window.pageYOffset + cardEl.getBoundingClientRect().top
+//     // let left2 = window.pageXOffset + cardEl.getBoundingClientRect().left
 
-    x = e.pageX - $(this).offset().left,
-    y = e.pageY - $(this).offset().top;
+//     x = e.pageX - $(this).offset().left,
+//     y = e.pageY - $(this).offset().top;
 
-    //jquery 문법
-    $(this).find('span').css({top:y, left:x})
-  })
-})
+//     //jquery 문법
+//     $(this).find('span').css({top:x, left:y})
+//   })
+// })
 // e는 mouse event 반환값
 // pageX, pageY  => 브라우페이지에서 x,y 축 좌표
 // .offset()은 선택한 요소의 좌표를 가져오거나 특정 좌표로 이동시킵니다.
 // 위에서 offset 메서드는 이벤트가 걸려 있는 DOM객체를 기준으로 좌표(x,y)를 출력합니다.
-
-
-
 
 
 

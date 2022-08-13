@@ -223,6 +223,14 @@
       .box.jest::before{
         background-color: #99425B;
       }
+
+      .box.netlify::before{
+        background-color: rgb(37, 199, 183);
+      }
+
+      .box.amazon-s3::before{
+        background-color: rgb(244, 82, 67);
+      }
     }
   
   }
@@ -248,7 +256,7 @@
           }
 
           .name{
-            @include text-style(24);
+            @include text-style(18);
           }
 
           .icon{
@@ -288,6 +296,7 @@
 
           .name{
             @include text-style(30);
+            font-size: 22px;
           }
 
           .icon{

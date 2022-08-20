@@ -57,8 +57,8 @@
 
   @include responsive(T){
     .title{
-      font-size: 90px;
-      line-height: 110px;
+      font-size: 80px;
+      line-height: 120px;
     }
 
     p{
@@ -68,11 +68,6 @@
   }
 
   @include responsive(D){
-    .title{
-      font-size: 100px;
-      line-height: 150px;
-    }
-
     p{
       bottom: -200px;
       font-size: 350px;

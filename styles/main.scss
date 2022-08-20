@@ -1,12 +1,11 @@
-@import './base/base.scss';
-
-
 @import './constants/z-index.scss';
 @import './constants/grids';
 @import './constants/breakpoint';
 @import './constants/typography';
 @import './constants/profile-grids';
 @import './constants/color';
+
+@import './base/base.scss';
 
 
 @import './mixins/flexbox';

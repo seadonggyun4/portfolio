@@ -56,6 +56,10 @@
     &.closca-shop{
       background: rgb(97,218,251);
     }
+
+    &.camping-blog{
+      background: #e71d36;
+    }
   }
 
   @include responsive(T){

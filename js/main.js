@@ -128,21 +128,21 @@ window.addEventListener('scroll',_.throttle(function(){
 }))
 
 // [header-menu  밑줄 이동: header menu] ============================================================================================
-let horizontalBar = document.getElementById('horizontal-underline')
-let horizontalMenus = document.querySelectorAll('.header-menu-list');
+// let horizontalBar = document.getElementById('horizontal-underline')
+// let horizontalMenus = document.querySelectorAll('.header-menu-list');
 
-horizontalMenus.forEach( (menu) => 
-  menu.addEventListener('click',(e)=> 
-    horizontalIndicator(e.currentTarget)
-    )
-)
+// horizontalMenus.forEach( (menu) => 
+//   menu.addEventListener('click',(e)=> 
+//     horizontalIndicator(e.currentTarget)
+//     )
+// )
 
-function horizontalIndicator(e){
-  horizontalBar.style.display = 'block';
-  horizontalBar.style.left = e.offsetLeft + 'px';
-  horizontalBar.style.width = e.offsetWidth + 'px';
-  horizontalBar.style.top = e.offsetTop + e.offsetHeight + 'px';
-}
+// function horizontalIndicator(e){
+//   horizontalBar.style.display = 'block';
+//   horizontalBar.style.left = e.offsetLeft + 'px';
+//   horizontalBar.style.width = e.offsetWidth + 'px';
+//   horizontalBar.style.top = e.offsetTop + e.offsetHeight + 'px';
+// }
 
 
 

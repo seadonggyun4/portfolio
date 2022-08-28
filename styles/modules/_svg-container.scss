@@ -38,6 +38,7 @@
     .stroke__wide {
       stroke: $svg-color;
       stroke-width: 500;
+      will-change: stroke-dasharray;
     }
 
     .stroke__narrow {
@@ -45,6 +46,7 @@
       stroke-width: 15;
       stroke-dasharray: 30 60;
       stroke-dashoffset: var(--dashOffset);
+      will-change: stroke-dashoffset;
     }
 
     .stroke__mask {
@@ -55,6 +57,7 @@
     .stroke__blob {
       display: none;
       fill: $svg-color;
+      will-change: transform;
     }
 
     @include responsive(T){

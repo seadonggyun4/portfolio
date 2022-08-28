@@ -9,6 +9,7 @@
   box-shadow: 0 5px 202px rgba(0, 0, 0, 0.2);
   transition: all .5s ease-in-out;
   transition-delay: calc(var(--i) * 0.2s);
+  will-change: transform;
   z-index: $toy-prject-z-index;
   opacity: 0;
   overflow: hidden;

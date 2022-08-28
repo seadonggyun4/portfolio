@@ -3,7 +3,6 @@
   width: 100%;
   height: 100vh;
   background-color: $title-bg-color;
-  // background-color: #F1ECE5;
 
   .title{
     // @include flexbox(center,center);
@@ -27,7 +26,6 @@
 
     //Title-active
     &.active{
-      // transform: translateY(0);
       span{
         opacity: 1;
         filter: blur(0);  

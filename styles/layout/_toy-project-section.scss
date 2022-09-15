@@ -60,11 +60,24 @@
     &.camping-blog{
       background: #e71d36;
     }
+
+    &.dashboard-clean{
+      background: #434ce8;
+    }
+
+    &.dashboard-basic{
+      background: #287bff;
+    }
+
+    &.camping-blog{
+      background: #e71d36;
+    }
   }
 
   @include responsive(T){
     padding: 0;
-    background: linear-gradient(#fff 0%, $svg-color 90%);
+    // background: linear-gradient(#fff 0%, $svg-color 90%);
+    background: #fff;
   }
 }
 
